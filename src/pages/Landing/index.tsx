@@ -5,7 +5,6 @@ import { RocketLaunch } from '@phosphor-icons/react'
 import { Container, Banner, Login, Header, Options } from './styles'
 
 import logoImg from '../../assets/logo.svg'
-import readingBookImg from '../../assets/readingBook.png'
 import googleIconImg from '../../assets/google-icon.svg'
 import githubIconImg from '../../assets/github-icon.svg'
 
@@ -18,7 +17,6 @@ export default function Landing() {
       <Container>
         <Banner>
           <Image alt="Logo BookWise" src={logoImg} />
-          <Image alt="Lendo livro num sofá" src={readingBookImg} />
         </Banner>
 
         <Login>
