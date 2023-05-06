@@ -10,39 +10,38 @@ import githubIconImg from '../../assets/github-icon.svg'
 
 export default function Landing() {
   return (
-    <>
+    <Container>
       <Head>
         <title>BookWise</title>
       </Head>
-      <Container>
-        <Banner>
-          <Image alt="Logo BookWise" src={logoImg} />
-        </Banner>
 
-        <Login>
-          <Header>
-            <h2>Boas vindas!</h2>
-            <p>Faça seu login ou acesse como visitante.</p>
-          </Header>
+      <Banner>
+        <Image alt="Logo BookWise" src={logoImg} />
+      </Banner>
 
-          <Options>
-            <button>
-              <Image alt="Google icon" src={googleIconImg} />
-              Entrar com Google
-            </button>
+      <Login>
+        <Header>
+          <h2>Boas vindas!</h2>
+          <p>Faça seu login ou acesse como visitante.</p>
+        </Header>
 
-            <button>
-              <Image alt="Github icon" src={githubIconImg} />
-              Entrar com Github
-            </button>
+        <Options>
+          <button>
+            <Image alt="Google icon" src={googleIconImg} />
+            Entrar com Google
+          </button>
 
-            <button>
-              <RocketLaunch />
-              Acessar como visitante
-            </button>
-          </Options>
-        </Login>
-      </Container>
-    </>
+          <button>
+            <Image alt="Github icon" src={githubIconImg} />
+            Entrar com Github
+          </button>
+
+          <button>
+            <RocketLaunch />
+            Acessar como visitante
+          </button>
+        </Options>
+      </Login>
+    </Container>
   )
 }
