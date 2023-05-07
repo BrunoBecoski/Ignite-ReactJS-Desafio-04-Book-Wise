@@ -64,6 +64,7 @@ export const { styled, getCssText } = createStitches({
       28: '1.75rem', // 28px
       32: '2rem', //    32px
       40: '2.5rem', //  40px
+      96: '6rem', //    96px
     },
 
     radii: {

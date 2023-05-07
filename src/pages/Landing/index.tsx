@@ -2,7 +2,15 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { RocketLaunch } from '@phosphor-icons/react'
 
-import { Container, Banner, Login, Header, Options } from './styles'
+import {
+  Container,
+  Banner,
+  Content,
+  Login,
+  Header,
+  Options,
+  Button,
+} from './styles'
 
 import logoImg from '../../assets/logo.svg'
 import googleIconImg from '../../assets/google-icon.svg'
@@ -19,29 +27,31 @@ export default function Landing() {
         <Image alt="Logo BookWise" src={logoImg} />
       </Banner>
 
-      <Login>
-        <Header>
-          <h2>Boas vindas!</h2>
-          <p>Faça seu login ou acesse como visitante.</p>
-        </Header>
+      <Content>
+        <Login>
+          <Header>
+            <h2>Boas vindas!</h2>
+            <p>Faça seu login ou acesse como visitante.</p>
+          </Header>
 
-        <Options>
-          <button>
-            <Image alt="Google icon" src={googleIconImg} />
-            Entrar com Google
-          </button>
+          <Options>
+            <Button>
+              <Image alt="Google icon" src={googleIconImg} />
+              Entrar com Google
+            </Button>
 
-          <button>
-            <Image alt="Github icon" src={githubIconImg} />
-            Entrar com Github
-          </button>
+            <Button>
+              <Image alt="Github icon" src={githubIconImg} />
+              Entrar com Github
+            </Button>
 
-          <button>
-            <RocketLaunch />
-            Acessar como visitante
-          </button>
-        </Options>
-      </Login>
+            <Button>
+              <RocketLaunch />
+              Acessar como visitante
+            </Button>
+          </Options>
+        </Login>
+      </Content>
     </Container>
   )
 }
