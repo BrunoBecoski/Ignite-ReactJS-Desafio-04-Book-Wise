@@ -13,7 +13,7 @@ export const Container = styled('div', {
 
   background: '$gray-800',
 
-  '@sm': {
+  '@md': {
     position: 'relative',
     padding: '$0',
   },
@@ -36,13 +36,14 @@ export const Banner = styled('div', {
     width: '$256',
   },
 
-  '@sm': {
+  '@md': {
     width: '100%',
     borderRadius: '$0',
     alignItems: 'flex-start',
 
     img: {
       marginTop: '$48',
+      width: '$208',
     },
   },
 })
@@ -53,9 +54,9 @@ export const Content = styled('div', {
   alignItems: 'center',
   justifyContent: 'center',
 
-  '@sm': {
+  '@md': {
     position: 'absolute',
-    top: '$160',
+    top: '20vh',
 
     display: 'inline',
     paddingInline: '$24',
@@ -70,7 +71,7 @@ export const Login = styled('div', {
 
   marginBottom: '$96',
 
-  '@sm': {
+  '@md': {
     marginBottom: '$0',
   },
 })
@@ -88,7 +89,7 @@ export const Header = styled('div', {
     lineHeight: '$160',
   },
 
-  '@sm': {
+  '@md': {
     textAlign: 'center',
   },
 })
@@ -96,6 +97,7 @@ export const Header = styled('div', {
 export const Options = styled('div', {
   display: 'flex',
   flexDirection: 'column',
+  alignItems: 'center',
   gap: '$16',
 })
 
@@ -136,6 +138,6 @@ export const Button = styled('button', {
   },
 
   '@sm': {
-    width: 'auto',
+    width: '100%',
   },
 })
