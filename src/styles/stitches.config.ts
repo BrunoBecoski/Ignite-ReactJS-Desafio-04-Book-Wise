@@ -9,11 +9,14 @@ export const globalStyles = globalCss({
 })
 
 export const { styled, getCssText } = createStitches({
-  theme: {
-    fonts: {
-      default: 'Nunito, sans-serif',
-    },
+  media: {
+    sm: '(max-width: 480px)',
+    md: '(max-width: 768px)',
+    lg: '(max-width: 976px)',
+    xl: '(max-width: 1440px)',
+  },
 
+  theme: {
     sizes: {
       0: '0px', //       000px
       1: '1px', //       001px
@@ -53,18 +56,36 @@ export const { styled, getCssText } = createStitches({
     },
 
     space: {
-      0: '0px', //      00px
-      1: '1px', //      01px
-      4: '0.25rem', //  04px
-      8: '0.5rem', //   08px
-      12: '0.75rem', // 12px
-      16: '1rem', //    16px
-      20: '1.25rem', // 20px
-      24: '1.5rem', //  24px
-      28: '1.75rem', // 28px
-      32: '2rem', //    32px
-      40: '2.5rem', //  40px
-      96: '6rem', //    96px
+      0: '0px', //       000px
+      1: '1px', //       001px
+      4: '0.25rem', //   004px
+      8: '0.5rem', //    008px
+      12: '0.75rem', //  012px
+      16: '1rem', //     016px
+      20: '1.25rem', //  020px
+      24: '1.5rem', //   024px
+      28: '1.75rem', //  028px
+      32: '2rem', //     032px
+      40: '2.5rem', //   040px
+      44: '2.75rem', //  044px
+      48: '3rem', //     048px
+      56: '3.5rem', //   056px
+      64: '4rem', //     064px
+      80: '5rem', //     080px
+      96: '6rem', //     096px
+      112: '7rem', //    112px
+      128: '8rem', //    128px
+      144: '9rem', //    144px
+      160: '10rem', //   160px
+      176: '11rem', //   176px
+      192: '12rem', //   192px
+      208: '13rem', //   208px
+      224: '14rem', //   224px
+      240: '15rem', //   240px
+      256: '16rem', //   256px
+      288: '18rem', //   288px
+      320: '20rem', //   320px
+      384: '24rem', //   384px
     },
 
     radii: {
@@ -87,6 +108,10 @@ export const { styled, getCssText } = createStitches({
       18: '1.125rem', // 18px
       20: '1.25rem', //  20px
       24: '1.5rem', //   24px
+    },
+
+    fonts: {
+      default: 'Nunito, sans-serif',
     },
 
     fontWeights: {

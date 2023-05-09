@@ -12,6 +12,11 @@ export const Container = styled('div', {
   padding: '$20',
 
   background: '$gray-800',
+
+  '@sm': {
+    position: 'relative',
+    padding: '$0',
+  },
 })
 
 export const Banner = styled('div', {
@@ -26,6 +31,20 @@ export const Banner = styled('div', {
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
   backgroundSize: 'cover',
+
+  img: {
+    width: '$256',
+  },
+
+  '@sm': {
+    width: '100%',
+    borderRadius: '$0',
+    alignItems: 'flex-start',
+
+    img: {
+      marginTop: '$48',
+    },
+  },
 })
 
 export const Content = styled('div', {
@@ -33,6 +52,15 @@ export const Content = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+
+  '@sm': {
+    position: 'absolute',
+    top: '$160',
+
+    display: 'inline',
+    paddingInline: '$24',
+    width: '100%',
+  },
 })
 
 export const Login = styled('div', {
@@ -41,6 +69,10 @@ export const Login = styled('div', {
   flexDirection: 'column',
 
   marginBottom: '$96',
+
+  '@sm': {
+    marginBottom: '$0',
+  },
 })
 
 export const Header = styled('div', {
@@ -54,6 +86,10 @@ export const Header = styled('div', {
   p: {
     color: '$gray-200',
     lineHeight: '$160',
+  },
+
+  '@sm': {
+    textAlign: 'center',
   },
 })
 
@@ -97,5 +133,9 @@ export const Button = styled('button', {
     height: '$32',
 
     color: '$purple-100',
+  },
+
+  '@sm': {
+    width: 'auto',
   },
 })
