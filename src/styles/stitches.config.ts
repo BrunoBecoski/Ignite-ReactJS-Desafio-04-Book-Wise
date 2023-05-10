@@ -102,12 +102,19 @@ export const { styled, getCssText } = createStitches({
     },
 
     fontSizes: {
-      12: '0.75rem', //  12px
-      14: '0.875rem', // 14px
-      16: '1rem', //     16px
-      18: '1.125rem', // 18px
-      20: '1.25rem', //  20px
-      24: '1.5rem', //   24px
+      12: '0.75rem', //  012px
+      14: '0.875rem', // 014px
+      16: '1rem', //     016px
+      18: '1.125rem', // 018px
+      20: '1.25rem', //  020px
+      24: '1.5rem', //   024px
+      30: '1.875rem', // 030px
+      36: '2.25rem', //  036px
+      48: '3rem', //     048px
+      60: '3.75rem', //  060px
+      72: '4.5rem', //   072px
+      96: '6rem', //     096px
+      128: '8rem', //    128px
     },
 
     fonts: {
