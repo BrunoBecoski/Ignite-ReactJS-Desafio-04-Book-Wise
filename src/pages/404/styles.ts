@@ -26,12 +26,14 @@ export const Content = styled('div', {
 
   h2: {
     color: '$gray-100',
+    fontFamily: '$default',
     fontSize: '$128',
     fontWeight: '$bold',
   },
 
   h1: {
     color: '$gray-100',
+    fontFamily: '$default',
   },
 
   a: {
@@ -40,6 +42,7 @@ export const Content = styled('div', {
     color: '$white',
     background: '$gray-600',
 
+    fontFamily: '$default',
     textDecoration: 'none',
     textTransform: 'uppercase',
     fontWeight: '$bold',

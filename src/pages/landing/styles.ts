@@ -77,6 +77,8 @@ export const Login = styled('div', {
 })
 
 export const Header = styled('div', {
+  fontFamily: '$default',
+
   h2: {
     color: '$gray-100',
     fontSize: '$24',
@@ -114,10 +116,12 @@ export const Button = styled('button', {
   borderRadius: '$8',
   background: '$gray-600',
 
+  fontFamily: '$default',
   fontSize: '$18',
   lineHeight: '$160',
   fontWeight: '$bold',
   color: '$gray-200',
+  textDecoration: 'none',
 
   transition: '$background',
 
