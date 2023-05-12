@@ -48,6 +48,7 @@ export const { styled, getCssText } = createStitches({
       192: '12rem', //   192px
       208: '13rem', //   208px
       224: '14rem', //   224px
+      232: '14.5rem', // 232px
       240: '15rem', //   240px
       256: '16rem', //   256px
       288: '18rem', //   288px
@@ -136,6 +137,8 @@ export const { styled, getCssText } = createStitches({
 
     transitions: {
       background: 'background .2s',
+      color: 'color .2s',
+      fill: 'fill .2s',
     },
 
     colors: {

@@ -1,16 +1,10 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import Image from 'next/image'
-import {
-  ChartLineUp,
-  Binoculars,
-  SignIn,
-  CaretRight,
-} from '@phosphor-icons/react'
 
-import { Container, SideBar, PageTitle, MyBooks, TrendingBooks } from './styles'
+import { ChartLineUp, CaretRight } from '@phosphor-icons/react'
 
-import logoImg from '../../assets/logo.svg'
+import { Sidebar } from '../../components/Sidebar'
+
+import { Container, PageTitle, MyBooks, TrendingBooks } from './styles'
 
 export default function start() {
   return (
@@ -19,24 +13,7 @@ export default function start() {
         <title>Início | BookWise</title>
       </Head>
 
-      <SideBar>
-        <Image alt="Logo BookWise" src={logoImg} />
-
-        <Link href="/start">
-          <ChartLineUp />
-          Início
-        </Link>
-
-        <Link href="/explore">
-          <Binoculars />
-          Explorar
-        </Link>
-
-        <Link href="/">
-          Fazer login
-          <SignIn />
-        </Link>
-      </SideBar>
+      <Sidebar selected="start" />
 
       <PageTitle>
         <ChartLineUp />
