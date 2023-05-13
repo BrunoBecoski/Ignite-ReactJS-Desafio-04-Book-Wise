@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { ChartLineUp, CaretRight } from '@phosphor-icons/react'
 
 import { Sidebar } from '../../components/Sidebar'
+import { BookReview } from '../../components/BookReview'
 
 import { Container, PageTitle, MyBooks, TrendingBooks } from './styles'
 
@@ -22,6 +23,8 @@ export default function start() {
 
       <MyBooks>
         <p>Avaliações mais recentes</p>
+
+        <BookReview />
       </MyBooks>
 
       <TrendingBooks>
