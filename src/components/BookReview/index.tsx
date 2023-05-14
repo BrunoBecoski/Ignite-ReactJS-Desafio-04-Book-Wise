@@ -21,7 +21,7 @@ export function BookReview() {
           </Avatar>
 
           <div>
-            <strong>Bruno Becoski</strong>
+            <p>Bruno Becoski</p>
             <span>Hoje</span>
           </div>
         </UserInfo>
