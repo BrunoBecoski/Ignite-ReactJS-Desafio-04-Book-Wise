@@ -4,6 +4,7 @@ import { ChartLineUp, CaretRight } from '@phosphor-icons/react'
 
 import { Sidebar } from '../../components/Sidebar'
 import { BookReview } from '../../components/BookReview'
+import { BookCard } from '../../components/BookCard'
 
 import { Container, PageTitle, MyBooks, TrendingBooks } from './styles'
 
@@ -34,6 +35,8 @@ export default function start() {
           Ver todos
           <CaretRight />
         </span>
+
+        <BookCard />
       </TrendingBooks>
     </Container>
   )
