@@ -7,15 +7,15 @@ export function BookCard() {
     <Container>
       <Cover
         alt="Capa do livro"
-        src="/images/books/a-revolucao-dos-bichos.png"
+        src="/images/books/14-habitos-de-desenvolvedores-altamente-produtivos.png"
         width="64"
         height="94"
       />
 
       <BookDetails>
         <Title>
-          <strong>A revolução dos bichos</strong>
-          <span>George Orwell</span>
+          <p>14 Hábitos de Desenvolvedores Altamente Produtivos</p>
+          <span>Zeno Rocha</span>
         </Title>
 
         <Rating>
