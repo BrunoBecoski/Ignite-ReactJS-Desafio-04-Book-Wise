@@ -12,8 +12,8 @@ export const Container = styled('nav', {
 
   borderRadius: '$12',
 
-  height: '100%',
-  maxWidth: '$232',
+  height: 'calc(100vh - $40)',
+  width: '$232',
 
   display: 'flex',
   flexDirection: 'column',

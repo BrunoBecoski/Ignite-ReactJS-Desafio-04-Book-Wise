@@ -6,7 +6,7 @@ import { Sidebar } from '../../components/Sidebar'
 import { BookReview } from '../../components/BookReview'
 import { BookCard } from '../../components/BookCard'
 
-import { Container, PageTitle, MyBooks, TrendingBooks } from './styles'
+import { Container, PageTitle, Content, MyBooks, TrendingBooks } from './styles'
 
 export default function start() {
   return (
@@ -17,27 +17,38 @@ export default function start() {
 
       <Sidebar selected="start" />
 
-      <PageTitle>
-        <ChartLineUp />
-        Início
-      </PageTitle>
+      <div>
+        <PageTitle>
+          <ChartLineUp />
+          <strong>Início</strong>
+        </PageTitle>
 
-      <MyBooks>
-        <p>Avaliações mais recentes</p>
+        <Content>
+          <MyBooks>
+            <p>Avaliações mais recentes</p>
 
-        <BookReview />
-      </MyBooks>
+            <BookReview />
+            <BookReview />
+            <BookReview />
+          </MyBooks>
 
-      <TrendingBooks>
-        <p>Livros populares</p>
+          <TrendingBooks>
+            <div>
+              <p>Livros populares</p>
 
-        <span>
-          Ver todos
-          <CaretRight />
-        </span>
+              <span>
+                Ver todos
+                <CaretRight weight="bold" />
+              </span>
+            </div>
 
-        <BookCard />
-      </TrendingBooks>
+            <BookCard />
+            <BookCard />
+            <BookCard />
+            <BookCard />
+          </TrendingBooks>
+        </Content>
+      </div>
     </Container>
   )
 }

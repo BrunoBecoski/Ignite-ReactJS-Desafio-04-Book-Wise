@@ -74,6 +74,7 @@ export const { styled, getCssText } = createStitches({
       40: '2.5rem', //   040px
       44: '2.75rem', //  044px
       48: '3rem', //     048px
+      52: '3.25rem', //   052px
       56: '3.5rem', //   056px
       64: '4rem', //     064px
       80: '5rem', //     080px
