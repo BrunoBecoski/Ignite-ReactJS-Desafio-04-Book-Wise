@@ -2,11 +2,26 @@ import { styled } from '../../styles/stitches.config'
 
 export const Container = styled('div', {
   display: 'flex',
-  justifyContent: 'center',
-  gap: '$96',
   padding: '$20',
 
+  minHeight: '100vh',
+
   background: '$gray-800',
+})
+
+export const Content = styled('div', {
+  width: '1440px',
+  marginInline: 'auto',
+})
+
+export const Scroll = styled('div', {
+  marginLeft: '$328',
+
+  '> div': {
+    display: 'flex',
+    flexDirection: 'row',
+    gap: '$64',
+  },
 })
 
 export const PageTitle = styled('h2', {
@@ -28,12 +43,6 @@ export const PageTitle = styled('h2', {
     fontSize: '$24',
     lineHeight: '$140',
   },
-})
-
-export const Content = styled('div', {
-  display: 'flex',
-  flexDirection: 'row',
-  gap: '$64',
 })
 
 export const MyBooks = styled('div', {

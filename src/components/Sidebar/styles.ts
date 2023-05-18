@@ -10,6 +10,8 @@ export const Container = styled('nav', {
   backgroundPosition: 'center',
   backgroundSize: 'cover',
 
+  position: 'fixed',
+
   borderRadius: '$12',
 
   height: 'calc(100vh - $40)',
@@ -21,6 +23,7 @@ export const Container = styled('nav', {
   justifyContent: 'space-between',
 
   paddingBlock: '$40 $24',
+  paddingInline: '$52',
 
   '> div': {
     display: 'flex',

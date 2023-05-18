@@ -6,7 +6,14 @@ import { Sidebar } from '../../components/Sidebar'
 import { BookReview } from '../../components/BookReview'
 import { BookCard } from '../../components/BookCard'
 
-import { Container, PageTitle, Content, MyBooks, TrendingBooks } from './styles'
+import {
+  Container,
+  PageTitle,
+  Content,
+  Scroll,
+  MyBooks,
+  TrendingBooks,
+} from './styles'
 
 export default function start() {
   return (
@@ -15,40 +22,42 @@ export default function start() {
         <title>Início | BookWise</title>
       </Head>
 
-      <Sidebar selected="start" />
+      <Content>
+        <Sidebar selected="start" />
 
-      <div>
-        <PageTitle>
-          <ChartLineUp />
-          <strong>Início</strong>
-        </PageTitle>
+        <Scroll>
+          <PageTitle>
+            <ChartLineUp />
+            <strong>Início</strong>
+          </PageTitle>
 
-        <Content>
-          <MyBooks>
-            <p>Avaliações mais recentes</p>
+          <div>
+            <MyBooks>
+              <p>Avaliações mais recentes</p>
 
-            <BookReview />
-            <BookReview />
-            <BookReview />
-          </MyBooks>
+              <BookReview />
+              <BookReview />
+              <BookReview />
+            </MyBooks>
 
-          <TrendingBooks>
-            <div>
-              <p>Livros populares</p>
+            <TrendingBooks>
+              <div>
+                <p>Livros populares</p>
 
-              <span>
-                Ver todos
-                <CaretRight weight="bold" />
-              </span>
-            </div>
+                <span>
+                  Ver todos
+                  <CaretRight weight="bold" />
+                </span>
+              </div>
 
-            <BookCard />
-            <BookCard />
-            <BookCard />
-            <BookCard />
-          </TrendingBooks>
-        </Content>
-      </div>
+              <BookCard />
+              <BookCard />
+              <BookCard />
+              <BookCard />
+            </TrendingBooks>
+          </div>
+        </Scroll>
+      </Content>
     </Container>
   )
 }
