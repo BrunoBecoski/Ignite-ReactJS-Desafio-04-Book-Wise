@@ -83,7 +83,7 @@ export const Details = styled('div', {
   flexDirection: 'column',
   justifyContent: 'space-between',
 
-  '> div': {
+  'div:first-child': {
     display: 'flex',
     flexDirection: 'column',
 
@@ -103,10 +103,30 @@ export const Details = styled('div', {
     },
   },
 
-  p: {
-    fontFamily: '$default',
-    color: '$gray-300',
-    lineHeight: '$160',
-    fontSize: '$14',
+  'div:last-child': {
+    p: {
+      overflow: 'hidden',
+      display: '-webkit-box',
+      '-webkit-line-clamp': '3',
+      '-webkit-box-orient': 'vertical',
+
+      fontFamily: '$default',
+      color: '$gray-300',
+      lineHeight: '$160',
+      fontSize: '$14',
+    },
+
+    a: {
+      textDecoration: 'none',
+      fontFamily: '$default',
+      color: '$purple-100',
+      fontWeight: '$bold',
+      fontSize: '$14',
+      lineHeight: '$160',
+
+      '&:hover': {
+        textDecoration: 'underline',
+      },
+    },
   },
 })
