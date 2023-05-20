@@ -10,12 +10,9 @@ export const Container = styled('nav', {
   backgroundPosition: 'center',
   backgroundSize: 'cover',
 
-  position: 'fixed',
-
   borderRadius: '$12',
 
   height: 'calc(100vh - $40)',
-  width: '$232',
 
   display: 'flex',
   flexDirection: 'column',
@@ -24,6 +21,10 @@ export const Container = styled('nav', {
 
   paddingBlock: '$40 $24',
   paddingInline: '$52',
+
+  '@xl': {
+    paddingInline: '$32',
+  },
 
   '> div': {
     display: 'flex',

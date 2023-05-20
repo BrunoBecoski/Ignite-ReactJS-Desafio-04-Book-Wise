@@ -3,6 +3,8 @@ import { styled } from '../../styles/stitches.config'
 export const Container = styled('div', {
   display: 'flex',
   padding: '$20',
+  maxHeight: 'fit-content',
+  minHeight: '100vh',
 
   background: '$gray-800',
 })
@@ -12,15 +14,30 @@ export const Content = styled('div', {
   marginInline: 'auto',
 })
 
+export const Fixed = styled('div', {
+  position: 'fixed',
+})
+
 export const Scroll = styled('div', {
   marginLeft: '$328',
+
+  '@xxl': {
+    marginLeft: '$288',
+  },
+
+  '@xl': {
+    marginLeft: '$240',
+  },
 
   '> div': {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     gap: '$64',
-    paddingRight: '$76',
+
+    '@xxl': {
+      gap: '$32',
+    },
   },
 })
 

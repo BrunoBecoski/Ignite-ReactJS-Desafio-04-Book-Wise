@@ -10,6 +10,7 @@ import {
   Container,
   PageTitle,
   Content,
+  Fixed,
   Scroll,
   MyBooks,
   TrendingBooks,
@@ -23,7 +24,9 @@ export default function start() {
       </Head>
 
       <Content>
-        <Sidebar selected="start" />
+        <Fixed>
+          <Sidebar selected="start" />
+        </Fixed>
 
         <Scroll>
           <PageTitle>

@@ -13,7 +13,8 @@ export const { styled, getCssText } = createStitches({
     sm: '(max-width: 480px)',
     md: '(max-width: 768px)',
     lg: '(max-width: 976px)',
-    xl: '(max-width: 1440px)',
+    xl: '(max-width: 1200px)',
+    xxl: '(max-width: 1440px)',
   },
 
   theme: {
