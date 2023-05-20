@@ -7,7 +7,7 @@ export const Container = styled('div', {
   gap: '$20',
 
   padding: '$20 $18',
-  maxWidth: '$324',
+  minWidth: '$324',
 
   background: '$gray-700',
   borderRadius: '$8',

@@ -4,8 +4,6 @@ export const Container = styled('div', {
   display: 'flex',
   padding: '$20',
 
-  minHeight: '100vh',
-
   background: '$gray-800',
 })
 
@@ -20,7 +18,9 @@ export const Scroll = styled('div', {
   '> div': {
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'space-between',
     gap: '$64',
+    paddingRight: '$76',
   },
 })
 
