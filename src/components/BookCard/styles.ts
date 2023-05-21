@@ -11,6 +11,10 @@ export const Container = styled('div', {
 
   background: '$gray-700',
   borderRadius: '$8',
+
+  '@xl': {
+    minwWidth: '100%',
+  },
 })
 
 export const Cover = styled(Image, {

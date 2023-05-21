@@ -6,6 +6,10 @@ export const Container = styled('div', {
 
   borderRadius: '$8',
   background: '$gray-700',
+
+  '@xl': {
+    minWidth: '100%',
+  },
 })
 
 export const Header = styled('div', {
