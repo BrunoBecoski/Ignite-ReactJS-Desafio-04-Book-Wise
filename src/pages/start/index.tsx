@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Head from 'next/head'
 
 import { ChartLineUp, CaretRight } from '@phosphor-icons/react'
@@ -9,6 +10,7 @@ import { BookCard } from '../../components/BookCard'
 import {
   Container,
   PageTitle,
+  Options,
   Content,
   Fixed,
   Scroll,
@@ -17,6 +19,8 @@ import {
 } from './styles'
 
 export default function start() {
+  const [selected, setSelected] = useState('avaliations')
+
   return (
     <Container>
       <Head>
@@ -34,8 +38,17 @@ export default function start() {
             <strong>Início</strong>
           </PageTitle>
 
+          <Options>
+            <button onClick={() => setSelected('avaliations')}>
+              Avaliações mais recentes
+            </button>
+            <button onClick={() => setSelected('popular')}>
+              Livros populares
+            </button>
+          </Options>
+
           <div>
-            <MyBooks>
+            <MyBooks className={selected === 'avaliations' ? 'active' : ''}>
               <p>Avaliações mais recentes</p>
 
               <BookReview />
@@ -43,7 +56,7 @@ export default function start() {
               <BookReview />
             </MyBooks>
 
-            <TrendingBooks>
+            <TrendingBooks className={selected === 'popular' ? 'active' : ''}>
               <div>
                 <p>Livros populares</p>
 

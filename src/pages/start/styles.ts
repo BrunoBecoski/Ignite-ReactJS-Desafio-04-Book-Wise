@@ -16,6 +16,10 @@ export const Content = styled('div', {
 
 export const Fixed = styled('div', {
   position: 'fixed',
+
+  '@md': {
+    display: 'none',
+  },
 })
 
 export const Scroll = styled('div', {
@@ -27,6 +31,10 @@ export const Scroll = styled('div', {
 
   '@xl': {
     marginLeft: '$240',
+  },
+
+  '@md': {
+    marginLeft: '$0',
   },
 
   '> div': {
@@ -62,6 +70,28 @@ export const PageTitle = styled('h2', {
   },
 })
 
+export const Options = styled('div', {
+  visibility: 'hidden',
+
+  button: {
+    marginBottom: '$4',
+
+    fontFamily: '$default',
+    color: '$gray-100',
+    fontSize: '$14',
+    lineHeight: '$160',
+
+    border: 'none',
+    background: 'none',
+
+    cursor: 'pointer',
+  },
+
+  '@lg': {
+    visibility: 'visible',
+  },
+})
+
 export const MyBooks = styled('div', {
   display: 'flex',
   flexDirection: 'column',
@@ -74,6 +104,18 @@ export const MyBooks = styled('div', {
     color: '$gray-100',
     fontSize: '$14',
     lineHeight: '$160',
+  },
+
+  '@lg': {
+    display: 'none',
+
+    '> p': {
+      display: 'none',
+    },
+
+    '&.active': {
+      display: 'flex',
+    },
   },
 })
 
@@ -112,6 +154,18 @@ export const TrendingBooks = styled('div', {
         width: '$16',
         height: '$16',
       },
+    },
+  },
+
+  '@lg': {
+    display: 'none',
+
+    '> div:first-child': {
+      display: 'none',
+    },
+
+    '&.active': {
+      display: 'flex',
     },
   },
 })
