@@ -68,13 +68,18 @@ export const PageTitle = styled('h2', {
     fontSize: '$24',
     lineHeight: '$140',
   },
+
+  '@md': {
+    justifyContent: 'center',
+    marginBlock: '$8 $24',
+  },
 })
 
 export const Options = styled('div', {
   visibility: 'hidden',
 
   button: {
-    marginBottom: '$4',
+    marginBottom: '$16',
 
     fontFamily: '$default',
     color: '$gray-100',
@@ -85,6 +90,11 @@ export const Options = styled('div', {
     background: 'none',
 
     cursor: 'pointer',
+
+    '&.selected': {
+      fontWeight: '$bold',
+      borderBottom: '2px solid $green-100',
+    },
   },
 
   '@lg': {

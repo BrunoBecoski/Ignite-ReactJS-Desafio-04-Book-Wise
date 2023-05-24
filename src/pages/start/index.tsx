@@ -39,10 +39,16 @@ export default function start() {
           </PageTitle>
 
           <Options>
-            <button onClick={() => setSelected('avaliations')}>
+            <button
+              className={selected === 'avaliations' ? 'selected' : ''}
+              onClick={() => setSelected('avaliations')}
+            >
               Avaliações mais recentes
             </button>
-            <button onClick={() => setSelected('popular')}>
+            <button
+              className={selected === 'popular' ? 'selected' : ''}
+              onClick={() => setSelected('popular')}
+            >
               Livros populares
             </button>
           </Options>
