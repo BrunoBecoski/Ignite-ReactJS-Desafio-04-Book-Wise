@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Head from 'next/head'
 
-import { ChartLineUp, CaretRight } from '@phosphor-icons/react'
+import { ChartLineUp, CaretRight, List, X } from '@phosphor-icons/react'
 
 import { Sidebar } from '../../components/Sidebar'
 import { BookReview } from '../../components/BookReview'
@@ -20,6 +20,7 @@ import {
 
 export default function start() {
   const [selected, setSelected] = useState('avaliations')
+  const [sidebarIsOpen, setSidebarIsOpen] = useState(false)
 
   return (
     <Container>
@@ -28,11 +29,17 @@ export default function start() {
       </Head>
 
       <Content>
-        <Fixed>
+        <Fixed
+          className={sidebarIsOpen ? 'open' : 'close'}
+          onClick={() => setSidebarIsOpen(false)}
+        >
           <Sidebar selected="start" />
         </Fixed>
 
         <Scroll>
+          <button onClick={() => setSidebarIsOpen(!sidebarIsOpen)}>
+            {!sidebarIsOpen ? <List /> : <X />}
+          </button>
           <PageTitle>
             <ChartLineUp />
             <strong>Início</strong>

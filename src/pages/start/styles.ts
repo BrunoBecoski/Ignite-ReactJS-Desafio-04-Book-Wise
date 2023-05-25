@@ -19,11 +19,29 @@ export const Fixed = styled('div', {
 
   '@md': {
     display: 'none',
+    top: '$0',
+    right: '$0',
+    bottom: '$0',
+    left: '$0',
+
+    background: '$overlay',
+
+    '&.open': {
+      display: 'block',
+    },
+
+    '&.close': {
+      display: 'none',
+    },
   },
 })
 
 export const Scroll = styled('div', {
   marginLeft: '$328',
+
+  '> button': {
+    display: 'none',
+  },
 
   '@xxl': {
     marginLeft: '$288',
@@ -35,6 +53,24 @@ export const Scroll = styled('div', {
 
   '@md': {
     marginLeft: '$0',
+
+    '> button': {
+      zIndex: '10',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      cursor: 'pointer',
+
+      border: 'none',
+      background: 'none',
+
+      svg: {
+        fill: '$green-100',
+
+        width: '$32',
+        height: '$32',
+      },
+    },
   },
 
   '> div': {

@@ -22,10 +22,6 @@ export const Container = styled('nav', {
   paddingBlock: '$40 $24',
   paddingInline: '$52',
 
-  '@xl': {
-    paddingInline: '$32',
-  },
-
   '> div': {
     display: 'flex',
     flexDirection: 'column',
@@ -36,6 +32,16 @@ export const Container = styled('nav', {
   img: {
     width: '$128',
     height: 'auto',
+  },
+
+  '@xl': {
+    paddingInline: '$32',
+  },
+
+  '@md': {
+    borderRadius: '$0',
+    maxWidth: '40vw',
+    height: '100%',
   },
 })
 
