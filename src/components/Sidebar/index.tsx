@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ChartLineUp, Binoculars, SignIn } from '@phosphor-icons/react'
+import { ChartLineUp, Binoculars, SignIn, X } from '@phosphor-icons/react'
 
 import { Container, Menu, Navigation, Login } from './styles'
 
@@ -7,11 +7,15 @@ import logoImg from '../../assets/logo.svg'
 
 interface sidebarProps {
   selected: 'start' | 'explore'
+  setSidebarIsOpen: (value: boolean) => void
 }
 
-export function Sidebar({ selected }: sidebarProps) {
+export function Sidebar({ selected, setSidebarIsOpen }: sidebarProps) {
   return (
     <Container>
+      <button onClick={() => setSidebarIsOpen(false)}>
+        <X />
+      </button>
       <div>
         <Image alt="Logo BookWise" src={logoImg} />
 

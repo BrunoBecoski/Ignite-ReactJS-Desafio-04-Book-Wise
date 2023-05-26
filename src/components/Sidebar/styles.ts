@@ -22,6 +22,10 @@ export const Container = styled('nav', {
   paddingBlock: '$40 $24',
   paddingInline: '$52',
 
+  '> button': {
+    display: 'none',
+  },
+
   '> div': {
     display: 'flex',
     flexDirection: 'column',
@@ -40,8 +44,32 @@ export const Container = styled('nav', {
 
   '@md': {
     borderRadius: '$0',
-    maxWidth: '40vw',
+    maxWidth: '70vw',
     height: '100%',
+
+    position: 'relative',
+
+    '> button': {
+      position: 'absolute',
+
+      top: '$20',
+      left: '$20',
+
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      cursor: 'pointer',
+
+      border: 'none',
+      background: 'none',
+
+      svg: {
+        fill: '$green-100',
+
+        width: '$32',
+        height: '$32',
+      },
+    },
   },
 })
 
