@@ -36,10 +36,11 @@ export default function start() {
       </Head>
 
       <Content>
-        <Fixed
-          className={sidebarIsOpen ? 'open' : 'close'}
-          onClick={() => setSidebarIsOpen(false)}
-        >
+        <Fixed>
+          <div className="desktop">
+            <Sidebar selected="start" />
+          </div>
+
           {sidebarIsOpen && (
             <Overlay setClose={() => console.log('setClose()')}>
               <Sidebar selected="start" setSidebarIsOpen={setSidebarIsOpen} />
