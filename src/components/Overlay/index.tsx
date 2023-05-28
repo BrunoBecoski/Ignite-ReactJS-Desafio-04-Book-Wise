@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { createPortal } from 'react-dom'
 
 import { Container, Background } from './styles'
 
@@ -9,9 +10,14 @@ interface OverlayProps {
 
 export function Overlay({ children, setClose }: OverlayProps) {
   return (
-    <Container>
-      {children}
-      <Background onClick={() => setClose(true)} />
-    </Container>
+    <>
+      {createPortal(
+        <Container>
+          <Background onClick={() => setClose(true)}>CU</Background>
+          {children}
+        </Container>,
+        document.body,
+      )}
+    </>
   )
 }

@@ -17,23 +17,23 @@ export const Content = styled('div', {
 export const Fixed = styled('div', {
   position: 'fixed',
 
-  '@md': {
-    display: 'none',
-    top: '$0',
-    right: '$0',
-    bottom: '$0',
-    left: '$0',
+  // '@md': {
+  //   display: 'none',
+  //   top: '$0',
+  //   right: '$0',
+  //   bottom: '$0',
+  //   left: '$0',
 
-    background: '$overlay',
+  //   background: '$overlay',
 
-    '&.open': {
-      display: 'block',
-    },
+  //   '&.open': {
+  //     display: 'block',
+  //   },
 
-    '&.close': {
-      display: 'none',
-    },
-  },
+  //   '&.close': {
+  //     display: 'none',
+  //   },
+  // },
 })
 
 export const Scroll = styled('div', {
