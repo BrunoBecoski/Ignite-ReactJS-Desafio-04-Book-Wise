@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
+import Image from 'next/image'
 
 import { ChartLineUp, CaretRight, List } from '@phosphor-icons/react'
 
@@ -10,6 +11,7 @@ import { Overlay } from '../../components/Overlay'
 
 import {
   Container,
+  Header,
   PageTitle,
   Options,
   Content,
@@ -18,6 +20,8 @@ import {
   MyBooks,
   TrendingBooks,
 } from './styles'
+
+import logoImg from '../../assets/logo.svg'
 
 export default function start() {
   const [selected, setSelected] = useState('avaliations')
@@ -35,6 +39,16 @@ export default function start() {
         <title>Início | BookWise</title>
       </Head>
 
+      <Header>
+        <button onClick={() => setSidebarIsOpen(true)}>
+          <List />
+        </button>
+
+        <Image alt="Logo BookWise" src={logoImg} />
+
+        <div />
+      </Header>
+
       <Content>
         <Fixed>
           <div className="desktop">
@@ -49,9 +63,6 @@ export default function start() {
         </Fixed>
 
         <Scroll>
-          <button onClick={() => setSidebarIsOpen(true)}>
-            <List />
-          </button>
           <PageTitle>
             <ChartLineUp />
             <strong>Início</strong>

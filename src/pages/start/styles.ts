@@ -5,12 +5,52 @@ export const Container = styled('div', {
   padding: '$20',
   maxHeight: 'fit-content',
   minHeight: '100vh',
+  flexDirection: 'column',
 
   background: '$gray-800',
 })
 
+export const Header = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+
+  '> img': {
+    width: '$152',
+  },
+
+  '> div': {
+    width: '$32',
+    height: '$32',
+  },
+
+  '> button': {
+    display: 'none',
+  },
+
+  '@md': {
+    '> button': {
+      zIndex: '10',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      cursor: 'pointer',
+
+      border: 'none',
+      background: 'none',
+
+      svg: {
+        fill: '$green-100',
+
+        width: '$32',
+        height: '$32',
+      },
+    },
+  },
+})
+
 export const Content = styled('div', {
-  width: '1440px',
+  maxWidth: '1440px',
   marginInline: 'auto',
 })
 
@@ -26,10 +66,6 @@ export const Fixed = styled('div', {
 
 export const Scroll = styled('div', {
   marginLeft: '$328',
-
-  '> button': {
-    display: 'none',
-  },
 
   '@xxl': {
     marginLeft: '$288',
