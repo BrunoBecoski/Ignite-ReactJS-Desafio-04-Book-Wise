@@ -21,8 +21,6 @@ import {
   TrendingBooks,
 } from './styles'
 
-import logoImg from '../../assets/logo.svg'
-
 export default function start() {
   const [selected, setSelected] = useState('avaliations')
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false)
@@ -39,16 +37,6 @@ export default function start() {
         <title>Início | BookWise</title>
       </Head>
 
-      <Header>
-        <button onClick={() => setSidebarIsOpen(true)}>
-          <List />
-        </button>
-
-        <Image alt="Logo BookWise" src={logoImg} />
-
-        <div />
-      </Header>
-
       <Content>
         <Fixed>
           <div className="desktop">
@@ -63,10 +51,18 @@ export default function start() {
         </Fixed>
 
         <Scroll>
-          <PageTitle>
-            <ChartLineUp />
-            <strong>Início</strong>
-          </PageTitle>
+          <Header>
+            <button onClick={() => setSidebarIsOpen(true)}>
+              <List />
+            </button>
+
+            <PageTitle>
+              <ChartLineUp />
+              <strong>Início</strong>
+            </PageTitle>
+
+            <div />
+          </Header>
 
           <Options>
             <button

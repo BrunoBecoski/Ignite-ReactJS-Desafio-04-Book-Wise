@@ -10,45 +10,6 @@ export const Container = styled('div', {
   background: '$gray-800',
 })
 
-export const Header = styled('div', {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-
-  '> img': {
-    width: '$152',
-  },
-
-  '> div': {
-    width: '$32',
-    height: '$32',
-  },
-
-  '> button': {
-    display: 'none',
-  },
-
-  '@md': {
-    '> button': {
-      zIndex: '10',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      cursor: 'pointer',
-
-      border: 'none',
-      background: 'none',
-
-      svg: {
-        fill: '$green-100',
-
-        width: '$32',
-        height: '$32',
-      },
-    },
-  },
-})
-
 export const Content = styled('div', {
   maxWidth: '1440px',
   marginInline: 'auto',
@@ -77,9 +38,34 @@ export const Scroll = styled('div', {
 
   '@md': {
     marginLeft: '$0',
+  },
+
+  '> div': {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    gap: '$64',
+    '@xxl': {
+      gap: '$32',
+    },
+  },
+})
+
+export const Header = styled('header', {
+  marginBottom: '$0',
+
+  '> button': {
+    display: 'none',
+  },
+
+  '@md': {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+
+    marginBottom: '$32',
 
     '> button': {
-      zIndex: '10',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -95,16 +81,10 @@ export const Scroll = styled('div', {
         height: '$32',
       },
     },
-  },
 
-  '> div': {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    gap: '$64',
-
-    '@xxl': {
-      gap: '$32',
+    '> div': {
+      width: '$32',
+      height: '$32',
     },
   },
 })
@@ -113,7 +93,7 @@ export const PageTitle = styled('h2', {
   display: 'flex',
   alignItems: 'center',
   gap: '$12',
-  marginBlock: '$52 $40',
+  paddingTop: '$52',
 
   svg: {
     fill: '$green-100',
@@ -130,13 +110,14 @@ export const PageTitle = styled('h2', {
   },
 
   '@md': {
-    justifyContent: 'center',
-    marginBlock: '$8 $24',
+    paddingTop: '$0',
   },
 })
 
 export const Options = styled('div', {
   visibility: 'hidden',
+
+  marginTop: '$0',
 
   button: {
     marginBottom: '$16',
@@ -159,6 +140,8 @@ export const Options = styled('div', {
 
   '@lg': {
     visibility: 'visible',
+
+    marginTop: '$40',
   },
 })
 
