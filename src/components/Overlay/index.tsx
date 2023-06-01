@@ -5,15 +5,19 @@ import { Container, Background } from './styles'
 
 interface OverlayProps {
   children: ReactNode
-  setClose: (value: boolean) => void
+  setIsOpen: (value: boolean) => void
 }
 
-export function Overlay({ children, setClose }: OverlayProps) {
+export function Overlay({ children, setIsOpen }: OverlayProps) {
+  function handleClose() {
+    setIsOpen(false)
+  }
+
   return (
     <>
       {createPortal(
         <Container>
-          <Background onClick={() => setClose(true)}>CU</Background>
+          <Background onClick={handleClose} />
           {children}
         </Container>,
         document.body,

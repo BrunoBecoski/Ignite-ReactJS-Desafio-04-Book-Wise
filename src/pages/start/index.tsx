@@ -44,7 +44,7 @@ export default function start() {
           </div>
 
           {sidebarIsOpen && (
-            <Overlay setClose={() => console.log('setClose()')}>
+            <Overlay setIsOpen={setSidebarIsOpen}>
               <Sidebar selected="start" setSidebarIsOpen={setSidebarIsOpen} />
             </Overlay>
           )}
