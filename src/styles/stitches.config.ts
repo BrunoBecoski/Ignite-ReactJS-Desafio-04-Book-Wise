@@ -22,6 +22,7 @@ export const { styled, getCssText } = createStitches({
       0: '0px', //          0px
       1: '1px', //          1px
       2: '0.125rem', //     2px
+      3: '0.1875rem', //    3px
       4: '0.25rem', //      4px
       6: '0.375rem', //     6px
       8: '0.5rem', //       8px

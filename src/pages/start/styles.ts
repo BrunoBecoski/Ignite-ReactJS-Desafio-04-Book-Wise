@@ -120,7 +120,7 @@ export const Options = styled('div', {
   marginTop: '$0',
 
   button: {
-    marginBottom: '$16',
+    marginBottom: '$24',
 
     fontFamily: '$default',
     color: '$gray-100',
@@ -132,9 +132,22 @@ export const Options = styled('div', {
 
     cursor: 'pointer',
 
+    '&::after': {
+      content: '',
+      display: 'block',
+      width: '100%',
+      height: '$3',
+
+      borderRadius: '$9999',
+      marginTop: '$4',
+    },
+
     '&.selected': {
       fontWeight: '$bold',
-      borderBottom: '2px solid $green-100',
+
+      '&::after': {
+        background: '$green-100',
+      },
     },
   },
 
