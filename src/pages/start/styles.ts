@@ -187,8 +187,6 @@ export const MyBooks = styled('div', {
 })
 
 export const TrendingBooks = styled('div', {
-  width: '100%',
-
   display: 'flex',
   flexDirection: 'column',
   gap: '$12',
@@ -227,6 +225,7 @@ export const TrendingBooks = styled('div', {
   },
 
   '@lg': {
+    width: '100%',
     display: 'none',
 
     '> div:first-child': {
