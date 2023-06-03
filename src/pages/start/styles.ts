@@ -11,6 +11,7 @@ export const Container = styled('div', {
 })
 
 export const Content = styled('div', {
+  width: '100%',
   maxWidth: '1440px',
   marginInline: 'auto',
 })
@@ -186,6 +187,8 @@ export const MyBooks = styled('div', {
 })
 
 export const TrendingBooks = styled('div', {
+  width: '100%',
+
   display: 'flex',
   flexDirection: 'column',
   gap: '$12',
