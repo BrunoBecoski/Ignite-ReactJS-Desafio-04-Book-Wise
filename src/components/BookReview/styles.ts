@@ -117,5 +117,9 @@ export const Details = styled('div', {
     color: '$gray-300',
     lineHeight: '$160',
     fontSize: '$14',
+
+    '@sm': {
+      '-webkit-line-clamp': '3',
+    },
   },
 })

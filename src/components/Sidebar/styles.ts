@@ -44,7 +44,7 @@ export const Container = styled('nav', {
 
   '@md': {
     borderRadius: '$0',
-    maxWidth: '70vw',
+    maxWidth: '$232',
     height: '100%',
 
     position: 'relative',
