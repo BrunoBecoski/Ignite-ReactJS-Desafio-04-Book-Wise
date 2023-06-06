@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
 
 import { ChartLineUp, CaretRight, List } from '@phosphor-icons/react'
 

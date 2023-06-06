@@ -12,6 +12,7 @@ export const Container = styled('nav', {
 
   borderRadius: '$12',
 
+  maxWidth: '$232',
   height: 'calc(100vh - $40)',
 
   display: 'flex',
@@ -44,7 +45,6 @@ export const Container = styled('nav', {
 
   '@md': {
     borderRadius: '$0',
-    maxWidth: '$232',
     height: '100%',
 
     position: 'relative',
