@@ -5,12 +5,14 @@ import { Container, Background } from './styles'
 
 interface OverlayProps {
   children: ReactNode
-  setIsOpen: (value: boolean) => void
+  setIsOpen?: (value: boolean) => void
 }
 
 export function Overlay({ children, setIsOpen }: OverlayProps) {
   function handleClose() {
-    setIsOpen(false)
+    if (setIsOpen) {
+      setIsOpen(false)
+    }
   }
 
   return (

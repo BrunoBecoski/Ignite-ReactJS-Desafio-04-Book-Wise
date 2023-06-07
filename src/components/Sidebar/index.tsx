@@ -7,18 +7,20 @@ import logoImg from '../../assets/logo.svg'
 
 interface sidebarProps {
   selected: 'start' | 'explore'
-  setSidebarIsOpen?: (value: boolean) => void
+  setSidebarIsOpen: (value: boolean) => void
+  sidebarIsOpen: boolean
 }
 
-export function Sidebar({ selected, setSidebarIsOpen }: sidebarProps) {
+export function Sidebar({
+  selected,
+  sidebarIsOpen,
+  setSidebarIsOpen,
+}: sidebarProps) {
   function handleCloseSidebar() {
-    if (setSidebarIsOpen) {
-      setSidebarIsOpen(false)
-    }
+    setSidebarIsOpen(false)
   }
-
   return (
-    <Container>
+    <Container className={sidebarIsOpen ? 'open' : 'close'}>
       <button onClick={handleCloseSidebar}>
         <X />
       </button>

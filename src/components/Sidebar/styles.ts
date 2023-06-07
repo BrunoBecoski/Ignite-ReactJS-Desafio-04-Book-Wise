@@ -20,6 +20,7 @@ export const Container = styled('nav', {
   alignItems: 'center',
   justifyContent: 'space-between',
 
+  margin: '$20',
   paddingBlock: '$40 $24',
   paddingInline: '$52',
 
@@ -45,12 +46,16 @@ export const Container = styled('nav', {
 
   '@md': {
     borderRadius: '$0',
-    height: '100%',
+    height: '100vh',
 
-    position: 'relative',
+    margin: '$0',
+
+    top: '0',
+
+    // position: 'relative',
 
     '> button': {
-      position: 'absolute',
+      // position: 'absolute',
 
       top: '$20',
       left: '$20',
@@ -71,6 +76,10 @@ export const Container = styled('nav', {
       },
     },
   },
+
+  '&.open': {},
+
+  '&.close': {},
 })
 
 export const Menu = styled('div', {

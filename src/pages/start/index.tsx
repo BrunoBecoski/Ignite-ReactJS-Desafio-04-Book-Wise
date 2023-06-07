@@ -6,7 +6,7 @@ import { ChartLineUp, CaretRight, List } from '@phosphor-icons/react'
 import { Sidebar } from '../../components/Sidebar'
 import { BookReview } from '../../components/BookReview'
 import { BookCard } from '../../components/BookCard'
-import { Overlay } from '../../components/Overlay'
+// import { Overlay } from '../../components/Overlay'
 
 import {
   Container,
@@ -22,7 +22,7 @@ import {
 
 export default function start() {
   const [selected, setSelected] = useState('avaliations')
-  const [sidebarIsOpen, setSidebarIsOpen] = useState(false)
+  const [sidebarIsOpen, setSidebarIsOpen] = useState(true)
 
   useEffect(() => {
     sidebarIsOpen
@@ -38,7 +38,16 @@ export default function start() {
 
       <Content>
         <Fixed>
-          <div className="desktop">
+          {/* <div> */}
+          {/* <Overlay> */}
+          <Sidebar
+            selected="start"
+            sidebarIsOpen={sidebarIsOpen}
+            setSidebarIsOpen={setSidebarIsOpen}
+          />
+          {/* </Overlay> */}
+          {/* </div> */}
+          {/* <div className="desktop">
             <Sidebar selected="start" />
           </div>
 
@@ -46,7 +55,7 @@ export default function start() {
             <Overlay setIsOpen={setSidebarIsOpen}>
               <Sidebar selected="start" setSidebarIsOpen={setSidebarIsOpen} />
             </Overlay>
-          )}
+          )} */}
         </Fixed>
 
         <Scroll>

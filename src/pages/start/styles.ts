@@ -2,7 +2,6 @@ import { styled } from '../../styles/stitches.config'
 
 export const Container = styled('div', {
   display: 'flex',
-  padding: '$20',
   maxHeight: 'fit-content',
   minHeight: '100vh',
   flexDirection: 'column',
@@ -28,6 +27,7 @@ export const Fixed = styled('div', {
 
 export const Scroll = styled('div', {
   marginLeft: '$328',
+  padding: '$20',
 
   '@xxl': {
     marginLeft: '$288',
