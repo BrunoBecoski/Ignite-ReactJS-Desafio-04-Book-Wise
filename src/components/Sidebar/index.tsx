@@ -19,8 +19,9 @@ export function Sidebar({
   function handleCloseSidebar() {
     setSidebarIsOpen(false)
   }
+
   return (
-    <Container className={sidebarIsOpen ? 'open' : 'close'}>
+    <Container isOpen={{ '@lg': 'true', '@md': sidebarIsOpen }}>
       <button onClick={handleCloseSidebar}>
         <X />
       </button>

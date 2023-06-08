@@ -5,6 +5,8 @@ import { styled } from '../../styles/stitches.config'
 import sidebarBackground from '../../assets/sidebar_background.svg'
 
 export const Container = styled('nav', {
+  position: 'fixed',
+
   backgroundImage: `url(${sidebarBackground.src})`,
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
@@ -77,9 +79,18 @@ export const Container = styled('nav', {
     },
   },
 
-  '&.open': {},
+  transition: '$transform',
 
-  '&.close': {},
+  variants: {
+    isOpen: {
+      true: {
+        transform: 'translateX(0%)',
+      },
+      false: {
+        transform: 'translateX(-100%)',
+      },
+    },
+  },
 })
 
 export const Menu = styled('div', {

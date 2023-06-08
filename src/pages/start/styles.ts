@@ -15,16 +15,6 @@ export const Content = styled('div', {
   marginInline: 'auto',
 })
 
-export const Fixed = styled('div', {
-  position: 'fixed',
-
-  '@md': {
-    '.desktop': {
-      display: 'none',
-    },
-  },
-})
-
 export const Scroll = styled('div', {
   marginLeft: '$328',
   padding: '$20',

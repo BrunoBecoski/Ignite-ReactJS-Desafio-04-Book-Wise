@@ -14,7 +14,6 @@ import {
   PageTitle,
   Options,
   Content,
-  Fixed,
   Scroll,
   MyBooks,
   TrendingBooks,
@@ -37,26 +36,11 @@ export default function start() {
       </Head>
 
       <Content>
-        <Fixed>
-          {/* <div> */}
-          {/* <Overlay> */}
-          <Sidebar
-            selected="start"
-            sidebarIsOpen={sidebarIsOpen}
-            setSidebarIsOpen={setSidebarIsOpen}
-          />
-          {/* </Overlay> */}
-          {/* </div> */}
-          {/* <div className="desktop">
-            <Sidebar selected="start" />
-          </div>
-
-          {sidebarIsOpen && (
-            <Overlay setIsOpen={setSidebarIsOpen}>
-              <Sidebar selected="start" setSidebarIsOpen={setSidebarIsOpen} />
-            </Overlay>
-          )} */}
-        </Fixed>
+        <Sidebar
+          selected="start"
+          sidebarIsOpen={sidebarIsOpen}
+          setSidebarIsOpen={setSidebarIsOpen}
+        />
 
         <Scroll>
           <Header>

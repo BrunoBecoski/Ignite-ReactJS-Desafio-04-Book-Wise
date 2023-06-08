@@ -150,6 +150,7 @@ export const { styled, getCssText } = createStitches({
       background: 'background .2s',
       color: 'color .2s',
       fill: 'fill .2s',
+      transform: 'transform .5s',
     },
 
     colors: {
