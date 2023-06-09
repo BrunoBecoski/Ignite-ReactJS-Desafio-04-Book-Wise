@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Head from 'next/head'
 
 import { ChartLineUp, CaretRight, List } from '@phosphor-icons/react'
@@ -6,7 +6,7 @@ import { ChartLineUp, CaretRight, List } from '@phosphor-icons/react'
 import { Sidebar } from '../../components/Sidebar'
 import { BookReview } from '../../components/BookReview'
 import { BookCard } from '../../components/BookCard'
-// import { Overlay } from '../../components/Overlay'
+import { Overlay } from '../../components/Overlay'
 
 import {
   Container,
@@ -21,13 +21,7 @@ import {
 
 export default function start() {
   const [selected, setSelected] = useState('avaliations')
-  const [sidebarIsOpen, setSidebarIsOpen] = useState(true)
-
-  useEffect(() => {
-    sidebarIsOpen
-      ? (document.body.style.overflow = 'hidden')
-      : (document.body.style.overflow = 'unset')
-  }, [sidebarIsOpen])
+  const [sidebarIsOpen, setSidebarIsOpen] = useState(false)
 
   return (
     <Container className={sidebarIsOpen ? 'open' : 'close'}>
@@ -36,11 +30,17 @@ export default function start() {
       </Head>
 
       <Content>
-        <Sidebar
-          selected="start"
-          sidebarIsOpen={sidebarIsOpen}
-          setSidebarIsOpen={setSidebarIsOpen}
-        />
+        <Overlay
+          isOpen={sidebarIsOpen}
+          setIsOpen={setSidebarIsOpen}
+          background={sidebarIsOpen}
+        >
+          <Sidebar
+            selected="start"
+            sidebarIsOpen={sidebarIsOpen}
+            setSidebarIsOpen={setSidebarIsOpen}
+          />
+        </Overlay>
 
         <Scroll>
           <Header>
