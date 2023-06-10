@@ -7,14 +7,14 @@ interface OverlayProps {
   children: ReactNode
   isOpen: boolean
   setIsOpen: (value: boolean) => void
-  background: boolean
+  background?: boolean
 }
 
 export function Overlay({
   children,
-  background,
   isOpen,
   setIsOpen,
+  background = true,
 }: OverlayProps) {
   function handleClose() {
     setIsOpen(false)

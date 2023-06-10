@@ -1,9 +1,6 @@
 import { styled } from '../../styles/stitches.config'
 
-export const Container = styled('div', {
-  width: 'fit-content',
-  height: 'fit-content',
-})
+export const Container = styled('div', {})
 
 export const Background = styled('div', {
   width: '100vw',

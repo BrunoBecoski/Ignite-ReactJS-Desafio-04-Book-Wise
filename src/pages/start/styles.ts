@@ -23,10 +23,6 @@ export const Scroll = styled('div', {
     marginLeft: '$288',
   },
 
-  '@xl': {
-    marginLeft: '$240',
-  },
-
   '@md': {
     marginLeft: '$0',
   },
