@@ -1,4 +1,4 @@
-import { useEffect, ReactNode } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 import { Container, Background } from './styles'
@@ -16,6 +16,8 @@ export function Overlay({
   setIsOpen,
   background = true,
 }: OverlayProps) {
+  const [isBrowserSide, setIsBrowserSide] = useState(false)
+
   function handleClose() {
     setIsOpen(false)
   }
@@ -26,19 +28,20 @@ export function Overlay({
       : (document.body.style.overflow = 'unset')
   }, [isOpen])
 
-  if (typeof window !== 'object') {
-    return <></>
-  }
+  useEffect(() => {
+    setIsBrowserSide(typeof window === 'object')
+  }, [])
 
   return (
     <>
-      {createPortal(
-        <Container>
-          <Background onClick={handleClose} isActive={background} />
-          {children}
-        </Container>,
-        document.body,
-      )}
+      {isBrowserSide &&
+        createPortal(
+          <Container>
+            <Background onClick={handleClose} isActive={background} />
+            {children}
+          </Container>,
+          document.body,
+        )}
     </>
   )
 }
