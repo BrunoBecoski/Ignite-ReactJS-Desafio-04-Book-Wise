@@ -7,10 +7,13 @@ import sidebarBackground from '../../assets/sidebar_background.svg'
 export const Container = styled('nav', {
   position: 'fixed',
 
-  left: '$0',
+  left: 'calc(50vw - 700px)',
   top: '$0',
-  right: '$0',
   bottom: '$0',
+
+  '@xxl': {
+    left: '0',
+  },
 
   backgroundImage: `url(${sidebarBackground.src})`,
   backgroundRepeat: 'no-repeat',
@@ -45,10 +48,6 @@ export const Container = styled('nav', {
   img: {
     width: '$128',
     height: 'auto',
-  },
-
-  '@xl': {
-    paddingInline: '$32',
   },
 
   '@md': {
