@@ -6,6 +6,10 @@ export const globalStyles = globalCss({
     padding: 0,
     boxSizing: 'border-box',
   },
+
+  button: {
+    '-webkit-tap-highlight-color': 'transparent',
+  },
 })
 
 export const { styled, getCssText } = createStitches({

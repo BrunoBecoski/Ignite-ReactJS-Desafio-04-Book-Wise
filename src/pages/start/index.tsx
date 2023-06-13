@@ -35,11 +35,7 @@ export default function start() {
           setIsOpen={setSidebarIsOpen}
           background={sidebarIsOpen}
         >
-          <Sidebar
-            selected="start"
-            sidebarIsOpen={sidebarIsOpen}
-            setSidebarIsOpen={setSidebarIsOpen}
-          />
+          <Sidebar optionSelected="start" sidebarIsOpen={sidebarIsOpen} />
         </Overlay>
 
         <Scroll>

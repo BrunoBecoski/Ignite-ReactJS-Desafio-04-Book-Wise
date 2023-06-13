@@ -52,31 +52,9 @@ export const Container = styled('nav', {
 
   '@md': {
     borderRadius: '$0',
-    height: '100vh',
+    height: '100%',
 
     margin: '$0',
-
-    top: '0',
-
-    '> button': {
-      top: '$20',
-      left: '$20',
-
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      cursor: 'pointer',
-
-      border: 'none',
-      background: 'none',
-
-      svg: {
-        fill: '$green-100',
-
-        width: '$32',
-        height: '$32',
-      },
-    },
   },
 
   transition: '$transform',
