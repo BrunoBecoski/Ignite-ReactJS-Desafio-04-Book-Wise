@@ -123,7 +123,7 @@ export const books = [
     author: 'Douglas Adams',
     summary:
       'Conta as aventuras espaciais do inglês Arthur Dent e de seu amigo Ford Prefect. A dupla escapa da destruição da Terra pegando carona numa nave alienígena, graças aos conhecimentos de Prefect, um E.T. que vivia disfarçado de ator desempregado enquanto fazia pesquisa de campo para a nova edição do Guia do Mochileiro das Galáxias, o melhor guia de viagens interplanetário.',
-    cover: '/images/books/o-guia-do-mochileiro-das-galaxias.png',
+    cover_url: '/images/books/o-guia-do-mochileiro-das-galaxias.png',
     total_pages: 241,
     categories: [
       { name: 'Ficção', id: '8c4a4a4d-cbc4-4d2c-bb46-e95b0a536e09' },
