@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Head from 'next/head'
-
 import { ChartLineUp, CaretRight, List } from '@phosphor-icons/react'
+
+import { api } from '../../libs/axios'
 
 import { Sidebar } from '../../components/Sidebar'
 import { BookReview } from '../../components/BookReview'
@@ -22,6 +23,16 @@ import {
 export default function start() {
   const [selected, setSelected] = useState('avaliations')
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false)
+
+  useEffect(() => {
+    async function apiRequest() {
+      const books = await api.get('/books')
+
+      console.log(books)
+    }
+
+    apiRequest()
+  }, [])
 
   return (
     <Container className={sidebarIsOpen ? 'open' : 'close'}>
