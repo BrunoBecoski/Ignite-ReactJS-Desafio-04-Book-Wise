@@ -13,10 +13,13 @@ export default async function handler(
   const max = Number(request.query.max)
 
   const ratings = await prisma.rating.groupBy({
-    by: ['book_id'],
-
+    by: ['book_id', 'rate'],
     _count: {
       book_id: true,
+    },
+
+    _sum: {
+      rate: true,
     },
 
     orderBy: [
@@ -38,15 +41,24 @@ export default async function handler(
     },
   })
 
-  const res = ratings.map((rating) => {
-    return books.filter((book) => {
+  const ratingsFormat = ratings.map((rating) => {
+    return {
+      id: rating.book_id,
+      rate: rating._sum.rate / rating._count.book_id,
+    }
+  })
+
+  const booksFormat = ratings.map((rating) =>
+    books.filter((book) => {
       if (book.id === rating.book_id) {
         return {
           book,
         }
+      } else {
+        return null
       }
-    })
-  })
+    }),
+  )
 
-  return response.json(res)
+  return response.json({ ratingsFormat, booksFormat })
 }
