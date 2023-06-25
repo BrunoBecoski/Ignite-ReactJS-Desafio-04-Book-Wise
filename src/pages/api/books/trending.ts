@@ -14,9 +14,11 @@ export default async function handler(
 
   const ratings = await prisma.rating.groupBy({
     by: ['book_id'],
+
     _count: {
       book_id: true,
     },
+
     orderBy: [
       {
         _count: {
@@ -27,5 +29,24 @@ export default async function handler(
     take: max,
   })
 
-  return response.json(ratings)
+  const books = await prisma.book.findMany({
+    select: {
+      id: true,
+      name: true,
+      author: true,
+      cover_url: true,
+    },
+  })
+
+  const res = ratings.map((rating) => {
+    return books.filter((book) => {
+      if (book.id === rating.book_id) {
+        return {
+          book,
+        }
+      }
+    })
+  })
+
+  return response.json(res)
 }
