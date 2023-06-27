@@ -49,7 +49,7 @@ export default async function handler(
   })
 
   const booksFormat = ratings.map((rating) =>
-    books.filter((book) => {
+    books.find((book) => {
       if (book.id === rating.book_id) {
         return {
           book,
@@ -60,5 +60,17 @@ export default async function handler(
     }),
   )
 
-  return response.json({ ratingsFormat, booksFormat })
+  const ratingWithBook = ratingsFormat.map((rating, index) => {
+    const book = booksFormat[index]
+
+    return {
+      id: rating.id,
+      rate: rating.rate,
+      name: book?.name,
+      author: book?.author,
+      cover_url: book?.cover_url,
+    }
+  })
+
+  return response.json(ratingWithBook)
 }
