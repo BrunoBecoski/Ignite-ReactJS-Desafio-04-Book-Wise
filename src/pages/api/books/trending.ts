@@ -12,65 +12,80 @@ export default async function handler(
 
   const max = Number(request.query.max)
 
-  const ratings = await prisma.rating.groupBy({
-    by: ['book_id', 'rate'],
-    _count: {
-      book_id: true,
-    },
+  // const ratings = await prisma.rating.groupBy({
+  //   by: ['book_id', 'rate'],
+  //   _count: {
+  //     book_id: true,
+  //   },
 
-    _sum: {
-      rate: true,
-    },
+  //   _sum: {
+  //     rate: true,
+  //   },
 
-    orderBy: [
-      {
-        _count: {
-          book_id: 'desc',
-        },
-      },
-    ],
-    take: max,
-  })
+  //   orderBy: [
+  //     {
+  //       _count: {
+  //         book_id: 'desc',
+  //       },
+  //     },
+  //   ],
+  //   take: max,
+  // })
 
-  const books = await prisma.book.findMany({
-    select: {
-      id: true,
-      name: true,
-      author: true,
-      cover_url: true,
-    },
-  })
+  // const books = await prisma.book.findMany({
+  //   select: {
+  //     id: true,
+  //     name: true,
+  //     author: true,
+  //     cover_url: true,
+  //   },
+  // })
 
-  const ratingsFormat = ratings.map((rating) => {
-    return {
-      id: rating.book_id,
-      rate: rating._sum.rate / rating._count.book_id,
-    }
-  })
+  // const ratingsFormat = ratings.map((rating) => {
+  //   return {
+  //     id: rating.book_id,
+  //     rate: rating._sum.rate / rating._count.book_id,
+  //   }
+  // })
 
-  const booksFormat = ratings.map((rating) =>
-    books.find((book) => {
-      if (book.id === rating.book_id) {
-        return {
-          book,
-        }
-      } else {
-        return null
-      }
-    }),
-  )
+  // const booksFormat = ratings.map((rating) =>
+  //   books.find((book) => {
+  //     if (book.id === rating.book_id) {
+  //       return {
+  //         book,
+  //       }
+  //     } else {
+  //       return null
+  //     }
+  //   }),
+  // )
 
-  const ratingWithBook = ratingsFormat.map((rating, index) => {
-    const book = booksFormat[index]
+  // const ratingWithBook = ratingsFormat.map((rating, index) => {
+  //   const book = booksFormat[index]
 
-    return {
-      id: rating.id,
-      rate: rating.rate,
-      name: book?.name,
-      author: book?.author,
-      cover_url: book?.cover_url,
-    }
-  })
+  //   return {
+  //     id: rating.id,
+  //     rate: rating.rate,
+  //     name: book?.name,
+  //     author: book?.author,
+  //     cover_url: book?.cover_url,
+  //   }
+  // })
 
-  return response.json(ratingWithBook)
+  // return response.json(ratingWithBook)
+
+  const res = await prisma.$queryRaw`
+    SELECT
+      *
+    FROM 
+      ratings
+    GROUP BY
+      book_id
+    ORDER BY
+      COUNT(book_id) DESC
+    LIMIT 
+      ${max}
+  
+  `
+  return response.json(res)
 }
