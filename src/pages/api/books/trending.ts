@@ -2,6 +2,19 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { prisma } from '../../../libs/prisma'
 
+BigInt.prototype.toJSON = function () {
+  return Number(this)
+}
+
+type ratingWithBookProps = {
+  id: string
+  name: string
+  author: string
+  cover_url: string
+  count: number
+  sum: number
+}
+
 export default async function handler(
   request: NextApiRequest,
   response: NextApiResponse,
@@ -12,80 +25,35 @@ export default async function handler(
 
   const max = Number(request.query.max)
 
-  // const ratings = await prisma.rating.groupBy({
-  //   by: ['book_id', 'rate'],
-  //   _count: {
-  //     book_id: true,
-  //   },
-
-  //   _sum: {
-  //     rate: true,
-  //   },
-
-  //   orderBy: [
-  //     {
-  //       _count: {
-  //         book_id: 'desc',
-  //       },
-  //     },
-  //   ],
-  //   take: max,
-  // })
-
-  // const books = await prisma.book.findMany({
-  //   select: {
-  //     id: true,
-  //     name: true,
-  //     author: true,
-  //     cover_url: true,
-  //   },
-  // })
-
-  // const ratingsFormat = ratings.map((rating) => {
-  //   return {
-  //     id: rating.book_id,
-  //     rate: rating._sum.rate / rating._count.book_id,
-  //   }
-  // })
-
-  // const booksFormat = ratings.map((rating) =>
-  //   books.find((book) => {
-  //     if (book.id === rating.book_id) {
-  //       return {
-  //         book,
-  //       }
-  //     } else {
-  //       return null
-  //     }
-  //   }),
-  // )
-
-  // const ratingWithBook = ratingsFormat.map((rating, index) => {
-  //   const book = booksFormat[index]
-
-  //   return {
-  //     id: rating.id,
-  //     rate: rating.rate,
-  //     name: book?.name,
-  //     author: book?.author,
-  //     cover_url: book?.cover_url,
-  //   }
-  // })
-
-  // return response.json(ratingWithBook)
-
-  const res = await prisma.$queryRaw`
+  const ratingWithBook: ratingWithBookProps[] = await prisma.$queryRaw`
     SELECT
-      *
-    FROM 
+      books.id,
+      books.name,
+      books.author,
+      books.cover_url,
+      COUNT(ratings.book_id) as count,
+      SUM(ratings.rate) as sum
+    FROM
       ratings
+    INNER JOIN books
+        ON books.id = ratings.book_id
     GROUP BY
-      book_id
+      ratings.book_id
     ORDER BY
-      COUNT(book_id) DESC
+      count DESC
     LIMIT 
       ${max}
-  
   `
-  return response.json(res)
+
+  const ratingWithBookFormat = ratingWithBook.map((rating) => {
+    return {
+      id: rating.id,
+      name: rating.name,
+      author: rating.author,
+      cover_url: rating.cover_url,
+      rate: rating.sum / rating.count,
+    }
+  })
+
+  return response.json(ratingWithBookFormat)
 }
