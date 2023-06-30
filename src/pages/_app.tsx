@@ -7,6 +7,11 @@ const nunito = Nunito({
   subsets: ['latin'],
 })
 
+// eslint-disable-next-line no-extend-native
+BigInt.prototype.toJSON = function () {
+  return Number(this)
+}
+
 export default function App({ Component, pageProps }: AppProps) {
   globalStyles()
 

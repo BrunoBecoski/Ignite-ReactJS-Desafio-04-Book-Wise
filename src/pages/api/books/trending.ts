@@ -2,10 +2,6 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { prisma } from '../../../libs/prisma'
 
-BigInt.prototype.toJSON = function () {
-  return Number(this)
-}
-
 type ratingWithBookProps = {
   id: string
   name: string
