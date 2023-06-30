@@ -20,15 +20,24 @@ import {
   TrendingBooks,
 } from './styles'
 
+interface BooksTrendingProps {
+  id: string
+  name: string
+  author: string
+  cover_url: string
+  rate: number
+}
+
 export default function start() {
   const [selected, setSelected] = useState('avaliations')
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false)
+  const [booksTrending, setBooksTrending] = useState<BooksTrendingProps[]>([])
 
   useEffect(() => {
     async function apiRequest() {
-      const books = await api.get('/books')
+      const { data } = await api.get('/books/trending?max=4')
 
-      console.log(books)
+      setBooksTrending(data)
     }
 
     apiRequest()
@@ -97,10 +106,9 @@ export default function start() {
                 </span>
               </div>
 
-              <BookCard />
-              <BookCard />
-              <BookCard />
-              <BookCard />
+              {booksTrending.map((book) => (
+                <BookCard key={book.id} book={book} />
+              ))}
             </TrendingBooks>
           </div>
         </Scroll>
