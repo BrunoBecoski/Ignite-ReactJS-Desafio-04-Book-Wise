@@ -107,7 +107,7 @@ export default function start() {
               </div>
 
               {booksTrending.map((book) => (
-                <BookCard key={book.id} book={book} />
+                <BookCard key={book.id} bookInfo={book} />
               ))}
             </TrendingBooks>
           </div>
