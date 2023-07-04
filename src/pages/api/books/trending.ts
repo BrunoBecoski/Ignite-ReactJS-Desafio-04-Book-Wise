@@ -46,8 +46,9 @@ export default async function handler(
       id: rating.id,
       name: rating.name,
       author: rating.author,
-      cover_url: rating.cover_url,
-      rate: rating.sum / rating.count,
+      coverUrl: rating.cover_url,
+      sum: rating.sum,
+      count: rating.count,
     }
   })
 

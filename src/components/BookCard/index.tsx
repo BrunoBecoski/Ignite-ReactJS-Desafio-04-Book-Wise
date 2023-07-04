@@ -1,25 +1,28 @@
-import { Star } from '@phosphor-icons/react'
+import { Star, StarHalf } from '@phosphor-icons/react'
 
 import { Container, Cover, BookDetails, Title, Rating } from './styles'
 
 interface BookCardProps {
   bookInfo: {
-    id: string
     name: string
     author: string
-    cover_url: string
+    coverUrl: string
     rate: number
+    count: number
+    sum: number
   }
 }
 
 export function BookCard({ bookInfo }: BookCardProps) {
-  const { id, name, author, cover_url, rate } = bookInfo
+  const { name, author, coverUrl, count, sum } = bookInfo
+
+  const rate = sum / count
 
   return (
-    <Container>
+    <Container title={`Avaliação média: ${rate}`}>
       <Cover
         alt={`Capa do livro ${name}`}
-        src={cover_url}
+        src={coverUrl}
         width="64"
         height="94"
       />
@@ -32,10 +35,26 @@ export function BookCard({ bookInfo }: BookCardProps) {
 
         <Rating>
           <Star weight={rate >= 1 ? 'fill' : 'regular'} />
-          <Star weight={rate >= 2 ? 'fill' : 'regular'} />
-          <Star weight={rate >= 3 ? 'fill' : 'regular'} />
-          <Star weight={rate >= 4 ? 'fill' : 'regular'} />
-          <Star weight={rate >= 5 ? 'fill' : 'regular'} />
+          {rate === 1.5 ? (
+            <StarHalf weight="fill" />
+          ) : (
+            <Star weight={rate >= 2 ? 'fill' : 'regular'} />
+          )}
+          {rate === 2.5 ? (
+            <StarHalf weight="fill" />
+          ) : (
+            <Star weight={rate >= 3 ? 'fill' : 'regular'} />
+          )}
+          {rate === 3.5 ? (
+            <StarHalf weight="fill" />
+          ) : (
+            <Star weight={rate >= 4 ? 'fill' : 'regular'} />
+          )}
+          {rate === 4.5 ? (
+            <StarHalf weight="fill" />
+          ) : (
+            <Star weight={rate === 5 ? 'fill' : 'regular'} />
+          )}
         </Rating>
       </BookDetails>
     </Container>
