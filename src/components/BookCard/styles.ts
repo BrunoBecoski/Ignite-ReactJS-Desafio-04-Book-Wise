@@ -67,4 +67,18 @@ export const Rating = styled('div', {
     height: '$16',
     fill: '$purple-100',
   },
+
+  '.cover': {
+    overflow: 'hidden',
+    width: '70%',
+  },
+
+  '.star': {
+    height: '100px',
+    width: '100px',
+
+    '&.empty': {
+      position: 'absolute',
+    },
+  },
 })

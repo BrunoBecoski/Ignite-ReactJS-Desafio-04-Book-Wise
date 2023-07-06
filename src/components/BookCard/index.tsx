@@ -34,7 +34,7 @@ export function BookCard({ bookInfo }: BookCardProps) {
         </Title>
 
         <Rating>
-          <Star weight={rate >= 1 ? 'fill' : 'regular'} />
+          {/* <Star weight={rate >= 1 ? 'fill' : 'regular'} />
           {rate === 1.5 ? (
             <StarHalf weight="fill" />
           ) : (
@@ -54,7 +54,14 @@ export function BookCard({ bookInfo }: BookCardProps) {
             <StarHalf weight="fill" />
           ) : (
             <Star weight={rate === 5 ? 'fill' : 'regular'} />
-          )}
+          )} */}
+
+          <div className="estrelas">
+            <Star className="star empty" />
+            <div className="cover">
+              <Star className="star" weight="fill" />
+            </div>
+          </div>
         </Rating>
       </BookDetails>
     </Container>
