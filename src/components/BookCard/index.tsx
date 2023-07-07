@@ -56,11 +56,12 @@ export function BookCard({ bookInfo }: BookCardProps) {
             <Star weight={rate === 5 ? 'fill' : 'regular'} />
           )} */}
 
-          <div className="estrelas">
-            <Star className="star empty" />
-            <div className="cover">
-              <Star className="star" weight="fill" />
-            </div>
+          <Star className="star empty" weight="duotone" />
+          <div
+            className="cover"
+            style={{ width: `${rate.toString().split('.')[1]}0%` }}
+          >
+            <Star className="star" weight="fill" />
           </div>
         </Rating>
       </BookDetails>

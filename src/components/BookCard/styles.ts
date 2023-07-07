@@ -70,7 +70,6 @@ export const Rating = styled('div', {
 
   '.cover': {
     overflow: 'hidden',
-    width: '70%',
   },
 
   '.star': {
