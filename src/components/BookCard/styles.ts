@@ -73,9 +73,6 @@ export const Rating = styled('div', {
   },
 
   '.star': {
-    height: '100px',
-    width: '100px',
-
     '&.empty': {
       position: 'absolute',
     },
