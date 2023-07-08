@@ -1,6 +1,6 @@
-import { Star } from '@phosphor-icons/react'
+import { Rating } from '../../components/Rating'
 
-import { Container, Cover, BookDetails, Title, Rating } from './styles'
+import { Container, Cover, BookDetails, Title } from './styles'
 
 interface BookCardProps {
   bookInfo: {
@@ -33,61 +33,7 @@ export function BookCard({ bookInfo }: BookCardProps) {
           <span>{author}</span>
         </Title>
 
-        <Rating>
-          <Star weight="fill" />
-          {rate <= 1.1 && rate >= 1.9 ? (
-            <>
-              <Star className="star empty" weight="duotone" />
-              <div
-                className="cover"
-                style={{ width: `${rate.toString().split('.')[1]}0%` }}
-              >
-                <Star className="star" weight="fill" />
-              </div>
-            </>
-          ) : (
-            <Star weight="fill" />
-          )}
-          {rate <= 2.1 && rate >= 2.9 ? (
-            <>
-              <Star className="star empty" weight="duotone" />
-              <div
-                className="cover"
-                style={{ width: `${rate.toString().split('.')[1]}0%` }}
-              >
-                <Star className="star" weight="fill" />
-              </div>
-            </>
-          ) : (
-            <Star weight="fill" />
-          )}
-          {rate <= 3.1 && rate >= 3.9 ? (
-            <>
-              <Star className="star empty" weight="duotone" />
-              <div
-                className="cover"
-                style={{ width: `${rate.toString().split('.')[1]}0%` }}
-              >
-                <Star className="star" weight="fill" />
-              </div>
-            </>
-          ) : (
-            <Star weight="fill" />
-          )}
-          {rate <= 4.1 && rate >= 4.9 ? (
-            <>
-              <Star className="star empty" weight="duotone" />
-              <div
-                className="cover"
-                style={{ width: `${rate.toString().split('.')[1]}0%` }}
-              >
-                <Star className="star" weight="fill" />
-              </div>
-            </>
-          ) : (
-            <Star weight={rate === 5 ? 'fill' : 'regular'} />
-          )}
-        </Rating>
+        <Rating rate={rate} />
       </BookDetails>
     </Container>
   )

@@ -57,24 +57,3 @@ export const Title = styled('div', {
     lineHeight: '$160',
   },
 })
-
-export const Rating = styled('div', {
-  display: 'flex',
-  gap: '$4',
-
-  svg: {
-    width: '$16',
-    height: '$16',
-    fill: '$purple-100',
-  },
-
-  '.cover': {
-    overflow: 'hidden',
-  },
-
-  '.star': {
-    '&.empty': {
-      position: 'absolute',
-    },
-  },
-})
