@@ -7,16 +7,9 @@ export const Container = styled('div', {
   svg: {
     width: '$16',
     height: '$16',
-    fill: '$purple-100',
-  },
 
-  '.cover': {
-    overflow: 'hidden',
-  },
-
-  '.star': {
-    '&.empty': {
-      position: 'absolute',
+    path: {
+      fill: '$purple-100',
     },
   },
 })
