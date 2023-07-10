@@ -10,12 +10,15 @@ export default async function handler(
     return response.status(405).end()
   }
 
+  const max = Number(request.query.max)
+
   const books = await prisma.book.findMany({
     orderBy: [
       {
         name: 'asc',
       },
     ],
+    take: max,
   })
 
   return response.json(books)
