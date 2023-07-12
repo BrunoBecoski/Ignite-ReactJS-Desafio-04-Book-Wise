@@ -10,16 +10,29 @@ export default async function handler(
     return response.status(405).end()
   }
 
-  const max = Number(request.query.max)
+  const orderBy = request.query.orderBy
 
-  const books = await prisma.book.findMany({
-    orderBy: [
-      {
-        name: 'asc',
-      },
-    ],
-    take: max,
-  })
+  if (orderBy === 'name') {
+    const books = await prisma.book.findMany({
+      orderBy: [
+        {
+          name: 'asc',
+        },
+      ],
+    })
 
-  return response.json(books)
+    return response.json(books)
+  }
+
+  if (orderBy === 'author') {
+    const books = await prisma.book.findMany({
+      orderBy: [
+        {
+          author: 'asc',
+        },
+      ],
+    })
+
+    return response.json(books)
+  }
 }
