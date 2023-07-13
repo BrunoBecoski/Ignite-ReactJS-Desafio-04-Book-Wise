@@ -22,11 +22,30 @@ export default async function handler(
         },
       ],
       include: {
+        user: true,
         book: true,
       },
       take: max,
     })
 
-    return response.json(ratings)
+    const ratingsFormated = ratings.map((rating) => {
+      return {
+        id: rating.id,
+        rate: rating.rate,
+        date: rating.created_at,
+        description: rating.description,
+        user: {
+          name: rating.user.name,
+          avatarUrl: rating.user.avatar_url,
+        },
+        book: {
+          coverUrl: rating.book.cover_url,
+          name: rating.book.name,
+          author: rating.book.author,
+        },
+      }
+    })
+
+    return response.json(ratingsFormated)
   }
 }
