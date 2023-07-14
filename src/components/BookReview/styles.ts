@@ -52,23 +52,12 @@ export const Avatar = styled('span', {
   height: '$40',
 
   background: '$gradient-vertical',
-  borderRadius: '$9999',
+  borderRadius: '$full',
 
-  svg: {
-    width: '$32',
-    height: '$32',
-    fill: '$gray-700',
-  },
-})
-
-export const Rating = styled('div', {
-  display: 'flex',
-  gap: '$4',
-
-  svg: {
-    fill: '$purple-100',
-    width: '$16',
-    height: '$16',
+  img: {
+    borderRadius: '$full',
+    width: '$38',
+    height: '$38',
   },
 })
 

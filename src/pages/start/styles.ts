@@ -125,7 +125,7 @@ export const Options = styled('div', {
       width: '100%',
       height: '$3',
 
-      borderRadius: '$9999',
+      borderRadius: '$full',
       marginTop: '$4',
     },
 

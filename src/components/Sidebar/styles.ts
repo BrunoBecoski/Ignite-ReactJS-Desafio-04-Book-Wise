@@ -125,7 +125,7 @@ export const Navigation = styled(Link, {
           content: '',
           width: '$4',
           height: '$24',
-          borderRadius: '$9999',
+          borderRadius: '$full',
           background: '$gradient-vertical',
         },
       },

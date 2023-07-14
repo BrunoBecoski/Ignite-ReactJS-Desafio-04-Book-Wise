@@ -39,6 +39,7 @@ export const { styled, getCssText } = createStitches({
       28: '1.75rem', //    28px
       32: '2rem', //       32px
       36: '2.25rem', //    36px
+      38: '2.375rem', //   38px
       40: '2.5rem', //     40px
       44: '2.75rem', //    44px
       48: '3rem', //       48px
@@ -114,7 +115,7 @@ export const { styled, getCssText } = createStitches({
       12: '0.75rem', //  12px
       16: '1rem', //     16px
       24: '1.5rem', //   24px
-      9999: '9999px',
+      full: '9999px',
     },
 
     fontSizes: {

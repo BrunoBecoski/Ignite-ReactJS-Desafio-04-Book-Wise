@@ -1,60 +1,66 @@
 import Image from 'next/image'
-import { User, Star } from '@phosphor-icons/react'
 
-import {
-  Container,
-  Header,
-  UserInfo,
-  Avatar,
-  Rating,
-  Book,
-  Details,
-} from './styles'
+import { Rating } from '../Rating'
 
-export function BookReview() {
+import { Container, Header, UserInfo, Avatar, Book, Details } from './styles'
+
+interface BookReviewProps {
+  ratingInfo: {
+    rate: number
+    date: string
+    description: string
+    user: {
+      name: string
+      avatarUrl: string
+    }
+    book: {
+      coverUrl: string
+      name: string
+      author: string
+    }
+  }
+}
+
+export function BookReview({ ratingInfo }: BookReviewProps) {
+  const { rate, date, description, user, book } = ratingInfo
+
   return (
     <Container>
       <Header>
         <UserInfo>
           <Avatar>
-            <User />
+            <Image
+              alt={`Avatar ${user.name}`}
+              src={user.avatarUrl}
+              width="38"
+              height="38"
+            />
           </Avatar>
 
           <div>
-            <p>Bruno Becoski</p>
-            <span>Hoje</span>
+            <p>{user.name}</p>
+            <span>{date}</span>
           </div>
         </UserInfo>
 
-        <Rating>
-          <Star weight="fill" />
-          <Star weight="fill" />
-          <Star weight="fill" />
-          <Star />
-          <Star />
-        </Rating>
+        <Rating rate={rate} />
       </Header>
 
       <Book>
         <Image
-          alt="Capa do livro"
-          src="/images/books/o-guia-do-mochileiro-das-galaxias.png"
+          alt={`Capa do livro ${book.name}`}
+          src={book.coverUrl}
           width="108"
           height="152"
         />
 
         <Details>
           <div>
-            <strong>O guia do mochileiro das galáxias</strong>
-            <span>Douglas Adams</span>
+            <strong>{book.name}</strong>
+            <span>{book.author}</span>
           </div>
 
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-            assumenda nisi quidem sunt. Cum itaque sit at explicabo quae sequi,
-            eaque libero nesciunt doloremque incidunt, magni a. Dignissimos,
-            aperiam doloribus.
-          </p>
+          <p>{description}</p>
         </Details>
       </Book>
     </Container>

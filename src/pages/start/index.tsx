@@ -27,17 +27,36 @@ interface BooksTrendingProps {
   cover_url: string
   rate: number
 }
+interface BooksRatingsProps {
+  id: string
+  rate: number
+  date: string
+  description: string
+  user: {
+    name: string
+    avatarUrl: string
+  }
+  book: {
+    coverUrl: string
+    name: string
+    author: string
+  }
+}
 
 export default function start() {
   const [selected, setSelected] = useState('avaliations')
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false)
   const [booksTrending, setBooksTrending] = useState<BooksTrendingProps[]>([])
+  const [booksRatings, setBooksRatings] = useState<BooksRatingsProps[]>([])
 
   useEffect(() => {
     async function apiRequest() {
-      const { data } = await api.get('/books/trending?max=4')
+      const bookTrending = await api.get('/books/trending?max=4')
 
-      setBooksTrending(data)
+      const bookRatings = await api.get('/ratings?orderBy=latest&max=3')
+
+      setBooksTrending(bookTrending.data)
+      setBooksRatings(bookRatings.data)
     }
 
     apiRequest()
@@ -91,9 +110,9 @@ export default function start() {
             <MyBooks className={selected === 'avaliations' ? 'active' : ''}>
               <p>Avaliações mais recentes</p>
 
-              <BookReview />
-              <BookReview />
-              <BookReview />
+              {booksRatings.map((rating) => (
+                <BookReview key={rating.id} ratingInfo={rating} />
+              ))}
             </MyBooks>
 
             <TrendingBooks className={selected === 'popular' ? 'active' : ''}>
