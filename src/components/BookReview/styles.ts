@@ -33,13 +33,6 @@ export const UserInfo = styled('div', {
       lineHeight: '$160',
       fontSize: '$16',
     },
-
-    span: {
-      fontFamily: '$default',
-      color: '$gray-400',
-      lineHeight: '$160',
-      fontSize: '$14',
-    },
   },
 })
 

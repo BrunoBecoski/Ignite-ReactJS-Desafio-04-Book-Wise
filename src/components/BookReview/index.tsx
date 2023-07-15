@@ -1,6 +1,7 @@
 import Image from 'next/image'
 
 import { Rating } from '../Rating'
+import { Date } from '../Date'
 
 import { Container, Header, UserInfo, Avatar, Book, Details } from './styles'
 
@@ -39,7 +40,7 @@ export function BookReview({ ratingInfo }: BookReviewProps) {
 
           <div>
             <p>{user.name}</p>
-            <span>{date}</span>
+            <Date date={date} />
           </div>
         </UserInfo>
 
