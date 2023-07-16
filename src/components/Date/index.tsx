@@ -1,4 +1,4 @@
-import dayjs from 'dayjs'
+import dayjs from '../../libs/dayjs'
 
 import { Container } from './styles'
 
@@ -8,6 +8,7 @@ interface DateProps {
 
 export function Date({ date }: DateProps) {
   const dateFormat = dayjs(date).format('DD/MM/YYYY')
+  const dateToNow = dayjs(date).fromNow()
 
-  return <Container>{dateFormat}</Container>
+  return <Container title={dateFormat}>{dateToNow}</Container>
 }

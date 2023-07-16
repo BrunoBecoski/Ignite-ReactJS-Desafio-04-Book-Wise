@@ -5,4 +5,8 @@ export const Container = styled('span', {
   color: '$gray-400',
   lineHeight: '$160',
   fontSize: '$14',
+
+  '&:first-letter': {
+    textTransform: 'capitalize',
+  },
 })
