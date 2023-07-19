@@ -61,6 +61,7 @@ export const { styled, getCssText } = createStitches({
       232: '14.5rem', //  232px
       240: '15rem', //    240px
       256: '16rem', //    256px
+      280: '17.5rem', //  280px
       288: '18rem', //    288px
       320: '20rem', //    320px
       324: '20.25rem', // 324px
