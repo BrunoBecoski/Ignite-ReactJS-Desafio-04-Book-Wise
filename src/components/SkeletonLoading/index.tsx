@@ -1,9 +1,13 @@
-import { Container } from './styles'
+import { Container, BookReview } from './styles'
 
 interface SkeletonLoadingProps {
   component: 'bookReview'
 }
 
 export function SkeletonLoading({ component }: SkeletonLoadingProps) {
-  return <Container component={component} />
+  if (component === 'bookReview') {
+    return <BookReview />
+  }
+
+  return <Container />
 }

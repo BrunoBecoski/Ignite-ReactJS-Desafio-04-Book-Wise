@@ -1,15 +1,11 @@
 import { styled } from '../../styles/stitches.config'
 
 export const Container = styled('div', {
-  background: '$gray-700',
   borderRadius: '$8',
+  background: '$gray-700',
+})
 
-  variants: {
-    component: {
-      bookReview: {
-        width: '$608',
-        height: '$280',
-      },
-    },
-  },
+export const BookReview = styled(Container, {
+  width: '$608',
+  height: '$280',
 })
