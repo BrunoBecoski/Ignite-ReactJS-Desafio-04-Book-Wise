@@ -10,13 +10,14 @@ export const Container = styled('div', {
   borderRadius: '$8',
   background: '$gray-700',
 
-  position: 'relative',
   overflow: 'hidden',
+  position: 'relative',
 
-  '&::after': {
+  '&::before': {
     position: 'absolute',
+
     content: '',
-    width: '50px',
+    width: '100px',
     height: '100%',
     transform: 'rotateZ(15deg) scaleY(2)',
 
@@ -29,4 +30,40 @@ export const Container = styled('div', {
 export const BookReview = styled(Container, {
   width: '$608',
   height: '$280',
+
+  padding: '$24',
+
+  '.user': {
+    '.avatar': {
+      width: '$50',
+      height: '$50',
+      borderRadius: '$full',
+
+      background: '$gray-600',
+    },
+
+    '.name': {
+      width: '$128',
+      height: '$16',
+      borderRadius: '$6',
+
+      background: '$gray-600',
+    },
+
+    '.date': {
+      width: '$64',
+      height: '$16',
+      borderRadius: '$6',
+
+      background: '$gray-600',
+    },
+
+    '.rate': {
+      width: '$100',
+      height: '$16',
+      borderRadius: '$6',
+
+      background: '$gray-600',
+    },
+  },
 })

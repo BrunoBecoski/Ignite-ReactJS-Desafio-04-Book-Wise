@@ -1,12 +1,21 @@
 import { Container, BookReview } from './styles'
 
 interface SkeletonLoadingProps {
-  component: 'bookReview'
+  type: 'bookReview'
 }
 
-export function SkeletonLoading({ component }: SkeletonLoadingProps) {
-  if (component === 'bookReview') {
-    return <BookReview />
+export function SkeletonLoading({ type }: SkeletonLoadingProps) {
+  if (type === 'bookReview') {
+    return (
+      <BookReview>
+        <div className="user">
+          <div className="avatar" />
+          <div className="name" />
+          <div className="date" />
+          <div className="rate" />
+        </div>
+      </BookReview>
+    )
   }
 
   return <Container />
