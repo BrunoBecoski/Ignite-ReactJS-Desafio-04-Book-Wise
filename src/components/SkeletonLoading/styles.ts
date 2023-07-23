@@ -28,42 +28,59 @@ export const Container = styled('div', {
 })
 
 export const BookReview = styled(Container, {
-  width: '$608',
+  width: '100%',
   height: '$280',
 
-  padding: '$24',
+  padding: '$20',
 
   '.user': {
+    display: 'grid',
+    gap: '$10 $20',
+    gridTemplateRows: '$20 $20',
+    gridTemplateColumns: '$50 $125 auto $125',
+    gridTemplateAreas: `
+      "avatar name . rate"
+      "avatar date . ."
+    `,
+
     '.avatar': {
       width: '$50',
       height: '$50',
-      borderRadius: '$full',
 
+      borderRadius: '$full',
       background: '$gray-600',
+
+      gridArea: 'avatar',
     },
 
     '.name': {
-      width: '$128',
-      height: '$16',
-      borderRadius: '$6',
+      width: '$125',
+      height: '$20',
 
+      borderRadius: '$6',
       background: '$gray-600',
+
+      gridArea: 'name',
     },
 
     '.date': {
-      width: '$64',
-      height: '$16',
-      borderRadius: '$6',
+      width: '$75',
+      height: '$18',
 
+      borderRadius: '$6',
       background: '$gray-600',
+
+      gridArea: 'date',
     },
 
     '.rate': {
-      width: '$100',
-      height: '$16',
-      borderRadius: '$6',
+      width: '$125',
+      height: '$20',
 
+      borderRadius: '$6',
       background: '$gray-600',
+
+      gridArea: 'rate',
     },
   },
 })

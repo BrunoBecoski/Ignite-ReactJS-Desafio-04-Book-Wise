@@ -26,7 +26,7 @@ export const { styled, getCssText } = createStitches({
       0: '0px', //          0px
       1: '1px', //          1px
       2: '0.125rem', //     2px
-      3: '0.1875rem', //    3px
+      3: '0.187rem', //     3px
       4: '0.25rem', //      4px
       6: '0.375rem', //     6px
       8: '0.5rem', //       8px
@@ -34,6 +34,7 @@ export const { styled, getCssText } = createStitches({
       12: '0.75rem', //    12px
       14: '0.875rem', //   14px
       16: '1rem', //       16px
+      18: '1.125rem', //   18px
       20: '1.25rem', //    20px
       24: '1.5rem', //     24px
       28: '1.75rem', //    28px
@@ -46,12 +47,14 @@ export const { styled, getCssText } = createStitches({
       50: '3.125rem', //   50px
       56: '3.5rem', //     56px
       64: '4rem', //       64px
+      75: '4.687rem', //   75px
       80: '5rem', //       80px
       94: '5.875rem', //   64px
       96: '6rem', //       96px
       100: '6.25rem', //  100px
       108: '6.75rem', //  108px
       112: '7rem', //     112px
+      125: '7.812rem', // 125px
       128: '8rem', //     128px
       144: '9rem', //     144px
       152: '9.5rem', //   152px
@@ -76,6 +79,7 @@ export const { styled, getCssText } = createStitches({
       1: '1px', //         1px
       4: '0.25rem', //     4px
       8: '0.5rem', //      8px
+      10: '0.625rem', //  10px
       12: '0.75rem', //   12px
       16: '1rem', //      16px
       18: '1.125rem', //  18px
