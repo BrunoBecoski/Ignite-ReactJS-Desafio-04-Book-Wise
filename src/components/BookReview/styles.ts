@@ -41,16 +41,16 @@ export const Avatar = styled('span', {
   alignItems: 'center',
   justifyContent: 'center',
 
-  width: '$40',
-  height: '$40',
+  width: '$50',
+  height: '$50',
 
   background: '$gradient-vertical',
   borderRadius: '$full',
 
   img: {
     borderRadius: '$full',
-    width: '$38',
-    height: '$38',
+    width: '$46',
+    height: '$46',
   },
 })
 
@@ -61,6 +61,7 @@ export const Book = styled('div', {
   img: {
     width: '$108',
     height: '$152',
+    borderRadius: '$4',
   },
 })
 

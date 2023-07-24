@@ -33,8 +33,8 @@ export function BookReview({ ratingInfo }: BookReviewProps) {
             <Image
               alt={`Avatar ${user.name}`}
               src={user.avatarUrl}
-              width="38"
-              height="38"
+              width="50"
+              height="50"
             />
           </Avatar>
 

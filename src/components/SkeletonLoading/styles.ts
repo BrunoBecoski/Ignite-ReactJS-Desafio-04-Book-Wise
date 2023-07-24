@@ -29,7 +29,6 @@ export const Container = styled('div', {
 
 export const BookReview = styled(Container, {
   width: '100%',
-  height: '$280',
 
   padding: '$20',
 
@@ -81,6 +80,46 @@ export const BookReview = styled(Container, {
       background: '$gray-600',
 
       gridArea: 'rate',
+    },
+  },
+
+  '.book': {
+    '.cover': {
+      width: '$110',
+      height: '$150',
+
+      borderRadius: '$4',
+      background: '$gray-600',
+    },
+
+    '.name': {
+      width: '$200',
+      height: '$20',
+
+      borderRadius: '$6',
+      background: '$gray-600',
+    },
+
+    '.author': {
+      width: '$100',
+      height: '$18',
+
+      borderRadius: '$6',
+      background: '$gray-600',
+    },
+
+    '.description': {
+      div: {
+        width: '100%',
+        height: '$18',
+
+        borderRadius: '$6',
+        background: '$gray-600',
+
+        '&:last-child': {
+          width: '50%',
+        },
+      },
     },
   },
 })

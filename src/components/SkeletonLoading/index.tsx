@@ -14,6 +14,18 @@ export function SkeletonLoading({ type }: SkeletonLoadingProps) {
           <div className="date" />
           <div className="rate" />
         </div>
+
+        <div className="book">
+          <div className="cover" />
+          <div className="name" />
+          <div className="author" />
+          <div className="description">
+            <div />
+            <div />
+            <div />
+            <div />
+          </div>
+        </div>
       </BookReview>
     )
   }
