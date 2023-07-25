@@ -38,16 +38,22 @@ export const BookReview = styled(Container, {
     gridTemplateRows: '$20 $20',
     gridTemplateColumns: '$50 $125 auto $125',
     gridTemplateAreas: `
-      "avatar name . rate"
-      "avatar date . ."
+      'avatar name . rate'
+      'avatar date . .'
     `,
+
+    marginBottom: '$30',
+
+    div: {
+      borderRadius: '$6',
+      background: '$gray-600',
+    },
 
     '.avatar': {
       width: '$50',
       height: '$50',
 
       borderRadius: '$full',
-      background: '$gray-600',
 
       gridArea: 'avatar',
     },
@@ -56,18 +62,12 @@ export const BookReview = styled(Container, {
       width: '$125',
       height: '$20',
 
-      borderRadius: '$6',
-      background: '$gray-600',
-
       gridArea: 'name',
     },
 
     '.date': {
       width: '$75',
       height: '$18',
-
-      borderRadius: '$6',
-      background: '$gray-600',
 
       gridArea: 'date',
     },
@@ -76,45 +76,64 @@ export const BookReview = styled(Container, {
       width: '$125',
       height: '$20',
 
-      borderRadius: '$6',
-      background: '$gray-600',
-
       gridArea: 'rate',
     },
   },
 
   '.book': {
+    display: 'grid',
+    gap: '$10 $20',
+    gridTemplateColumns: '$110 auto',
+    gridTemplateRows: '$20 $18 auto',
+    gridTemplateAreas: `
+      'cover name .'
+      'cover author .'
+      'cover description description'
+    `,
+
+    div: {
+      borderRadius: '$6',
+      background: '$gray-600',
+    },
+
     '.cover': {
       width: '$110',
       height: '$150',
 
       borderRadius: '$4',
-      background: '$gray-600',
+
+      gridArea: 'cover',
     },
 
     '.name': {
       width: '$200',
       height: '$20',
 
-      borderRadius: '$6',
-      background: '$gray-600',
+      gridArea: 'name',
     },
 
     '.author': {
       width: '$100',
       height: '$18',
 
-      borderRadius: '$6',
-      background: '$gray-600',
+      marginTop: '-$5',
+
+      gridArea: 'author',
     },
 
     '.description': {
+      display: 'flex',
+      gap: '$5',
+      flexDirection: 'column',
+      justifyContent: 'flex-end',
+
+      background: 'none',
+
+      gridArea: 'description',
+
       div: {
         width: '100%',
         height: '$18',
-
-        borderRadius: '$6',
-        background: '$gray-600',
 
         '&:last-child': {
           width: '50%',
