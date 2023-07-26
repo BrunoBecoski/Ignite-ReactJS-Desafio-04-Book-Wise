@@ -7,6 +7,9 @@ const animation = keyframes({
 })
 
 export const Container = styled('div', {
+  width: '100%',
+  padding: '$20',
+
   borderRadius: '$8',
   background: '$gray-700',
 
@@ -28,10 +31,6 @@ export const Container = styled('div', {
 })
 
 export const BookReview = styled(Container, {
-  width: '100%',
-
-  padding: '$20',
-
   '.user': {
     display: 'grid',
     gap: '$10 $20',
@@ -139,6 +138,82 @@ export const BookReview = styled(Container, {
           width: '50%',
         },
       },
+    },
+  },
+})
+
+export const BookCard = styled(Container, {
+  display: 'grid',
+  gap: '$10 $20',
+  gridTemplateColumns: '$75 auto',
+  gridTemplateRows: '$20 $18 auto $20',
+  gridTemplateAreas: `
+    'cover name'
+    'cover author'
+    'cover .'
+    'cover rate'
+  `,
+
+  div: {
+    borderRadius: '$6',
+    background: '$gray-600',
+  },
+
+  '.cover': {
+    width: '$75',
+    height: '$100',
+
+    borderRadius: '$4',
+
+    gridArea: 'cover',
+  },
+
+  '.name': {
+    width: '$170',
+    height: '$20',
+
+    gridArea: 'name',
+  },
+
+  '.author': {
+    width: '$100',
+    height: '$18',
+
+    gridArea: 'author',
+  },
+
+  '.rate': {
+    width: '$125',
+    height: '$20',
+
+    gridArea: 'rate',
+  },
+
+  '@xl': {
+    '.name': {
+      width: '100%',
+    },
+
+    '.author': {
+      width: '100%',
+    },
+
+    '.rate': {
+      width: '100%',
+    },
+  },
+
+  '@lg': {
+    '.name': {
+      width: '$170',
+    },
+
+    '.author': {
+      width: '$100',
+    },
+
+    '.rate': {
+      width: '$125',
     },
   },
 })

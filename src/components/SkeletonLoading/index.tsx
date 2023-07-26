@@ -1,7 +1,7 @@
-import { Container, BookReview } from './styles'
+import { Container, BookReview, BookCard } from './styles'
 
 interface SkeletonLoadingProps {
-  type: 'bookReview'
+  type?: 'bookReview' | 'bookCard'
 }
 
 export function SkeletonLoading({ type }: SkeletonLoadingProps) {
@@ -19,14 +19,20 @@ export function SkeletonLoading({ type }: SkeletonLoadingProps) {
           <div className="cover" />
           <div className="name" />
           <div className="author" />
-          <div className="description">
-            <div />
-            <div />
-            <div />
-            <div />
-          </div>
+          <div className="description" />
         </div>
       </BookReview>
+    )
+  }
+
+  if (type === 'bookCard') {
+    return (
+      <BookCard>
+        <div className="cover" />
+        <div className="name" />
+        <div className="author" />
+        <div className="rate" />
+      </BookCard>
     )
   }
 
