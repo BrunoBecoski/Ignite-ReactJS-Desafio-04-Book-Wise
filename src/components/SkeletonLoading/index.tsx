@@ -19,7 +19,12 @@ export function SkeletonLoading({ type }: SkeletonLoadingProps) {
           <div className="cover" />
           <div className="name" />
           <div className="author" />
-          <div className="description" />
+          <div className="description">
+            <div />
+            <div />
+            <div />
+            <div />
+          </div>
         </div>
       </BookReview>
     )

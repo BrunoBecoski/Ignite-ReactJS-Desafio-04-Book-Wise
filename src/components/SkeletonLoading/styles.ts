@@ -2,8 +2,8 @@ import { keyframes } from '@stitches/react'
 import { styled } from '../../styles/stitches.config'
 
 const animation = keyframes({
-  to: { right: '-200%' },
-  from: { right: '200%' },
+  from: { transform: 'translateX(-100%)' },
+  to: { transform: 'translateX(100%)' },
 })
 
 export const Container = styled('div', {
@@ -12,22 +12,6 @@ export const Container = styled('div', {
 
   borderRadius: '$8',
   background: '$gray-700',
-
-  overflow: 'hidden',
-  position: 'relative',
-
-  '&::before': {
-    position: 'absolute',
-
-    content: '',
-    width: '100px',
-    height: '100%',
-    transform: 'rotateZ(15deg) scaleY(2)',
-
-    background: 'linear-gradient(90deg, $gray-700, $gray-600, $gray-700)',
-
-    animation: `${animation} 5s infinite linear`,
-  },
 })
 
 export const BookReview = styled(Container, {
@@ -157,6 +141,17 @@ export const BookCard = styled(Container, {
   div: {
     borderRadius: '$6',
     background: '$gray-600',
+
+    '&::before': {
+      width: '324px',
+      height: '140px',
+
+      position: 'absolute',
+
+      content: '',
+      background: 'linear-gradient(90deg, $gray-600,  $gray-500 , $gray-600)',
+      animation: `${animation} 1s infinite linear`,
+    },
   },
 
   '.cover': {
@@ -166,6 +161,14 @@ export const BookCard = styled(Container, {
     borderRadius: '$4',
 
     gridArea: 'cover',
+
+    position: 'relative',
+    overflow: 'hidden',
+
+    '&::before': {
+      top: '-20px',
+      left: '-20px',
+    },
   },
 
   '.name': {
@@ -173,6 +176,14 @@ export const BookCard = styled(Container, {
     height: '$20',
 
     gridArea: 'name',
+
+    position: 'relative',
+    overflow: 'hidden',
+
+    '&::before': {
+      top: '-20px',
+      left: '-115px',
+    },
   },
 
   '.author': {
@@ -180,6 +191,14 @@ export const BookCard = styled(Container, {
     height: '$18',
 
     gridArea: 'author',
+
+    position: 'relative',
+    overflow: 'hidden',
+
+    '&::before': {
+      top: '-50px',
+      left: '-115px',
+    },
   },
 
   '.rate': {
@@ -187,6 +206,14 @@ export const BookCard = styled(Container, {
     height: '$20',
 
     gridArea: 'rate',
+
+    position: 'relative',
+    overflow: 'hidden',
+
+    '&::before': {
+      top: '-100px',
+      left: '-115px',
+    },
   },
 
   '@xl': {
