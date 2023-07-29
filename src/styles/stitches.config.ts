@@ -12,7 +12,7 @@ export const globalStyles = globalCss({
   },
 })
 
-export const { styled, getCssText } = createStitches({
+export const { styled, getCssText, keyframes } = createStitches({
   media: {
     sm: '(max-width: 480px)',
     md: '(max-width: 768px)',

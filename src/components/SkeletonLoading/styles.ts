@@ -1,10 +1,4 @@
-import { keyframes } from '@stitches/react'
-import { styled } from '../../styles/stitches.config'
-
-const animation = keyframes({
-  from: { transform: 'translateX(-100%)' },
-  to: { transform: 'translateX(100%)' },
-})
+import { keyframes, styled } from '../../styles/stitches.config'
 
 const pulse = keyframes({
   '0%': { background: '$gray-600' },
@@ -150,18 +144,8 @@ export const BookCard = styled(Container, {
 
   div: {
     borderRadius: '$6',
-    background: '$gray-600',
 
-    '&::before': {
-      width: '324px',
-      height: '140px',
-
-      position: 'absolute',
-
-      content: '',
-      background: 'linear-gradient(90deg, $gray-600,  $gray-500 , $gray-600)',
-      animation: `${animation} 1s infinite linear`,
-    },
+    animation: `${pulse} 1.5s infinite linear`,
   },
 
   '.cover': {
@@ -171,14 +155,6 @@ export const BookCard = styled(Container, {
     borderRadius: '$4',
 
     gridArea: 'cover',
-
-    position: 'relative',
-    overflow: 'hidden',
-
-    '&::before': {
-      top: '-20px',
-      left: '-20px',
-    },
   },
 
   '.name': {
@@ -186,14 +162,6 @@ export const BookCard = styled(Container, {
     height: '$20',
 
     gridArea: 'name',
-
-    position: 'relative',
-    overflow: 'hidden',
-
-    '&::before': {
-      top: '-20px',
-      left: '-115px',
-    },
   },
 
   '.author': {
@@ -201,14 +169,6 @@ export const BookCard = styled(Container, {
     height: '$18',
 
     gridArea: 'author',
-
-    position: 'relative',
-    overflow: 'hidden',
-
-    '&::before': {
-      top: '-50px',
-      left: '-115px',
-    },
   },
 
   '.rate': {
@@ -216,14 +176,6 @@ export const BookCard = styled(Container, {
     height: '$20',
 
     gridArea: 'rate',
-
-    position: 'relative',
-    overflow: 'hidden',
-
-    '&::before': {
-      top: '-100px',
-      left: '-115px',
-    },
   },
 
   '@xl': {
