@@ -6,6 +6,12 @@ const animation = keyframes({
   to: { transform: 'translateX(100%)' },
 })
 
+const pulse = keyframes({
+  '0%': { background: '$gray-600' },
+  '50%': { background: '$gray-500' },
+  '100%': { background: '$gray-600' },
+})
+
 export const Container = styled('div', {
   width: '100%',
   padding: '$20',
@@ -29,7 +35,8 @@ export const BookReview = styled(Container, {
 
     div: {
       borderRadius: '$6',
-      background: '$gray-600',
+
+      animation: `${pulse} 1.5s infinite linear`,
     },
 
     '.avatar': {
@@ -76,7 +83,8 @@ export const BookReview = styled(Container, {
 
     div: {
       borderRadius: '$6',
-      background: '$gray-600',
+
+      animation: `${pulse} 1.5s infinite linear`,
     },
 
     '.cover': {
@@ -113,6 +121,8 @@ export const BookReview = styled(Container, {
       background: 'none',
 
       gridArea: 'description',
+
+      animation: 'none',
 
       div: {
         width: '100%',
