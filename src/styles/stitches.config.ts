@@ -46,6 +46,7 @@ export const { styled, getCssText, keyframes } = createStitches({
       46: '2.875rem', //   46px
       48: '3rem', //       48px
       50: '3.125rem', //   50px
+      52: '3.25rem', //    52px
       56: '3.5rem', //     56px
       64: '4rem', //       64px
       75: '4.687rem', //   75px
@@ -82,6 +83,7 @@ export const { styled, getCssText, keyframes } = createStitches({
     space: {
       0: '0px', //         0px
       1: '1px', //         1px
+      2: '0.125rem', //    2px
       4: '0.25rem', //     4px
       5: '0.312rem', //    5px
       8: '0.5rem', //      8px

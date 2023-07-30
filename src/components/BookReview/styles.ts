@@ -36,24 +36,6 @@ export const UserInfo = styled('div', {
   },
 })
 
-export const Avatar = styled('span', {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-
-  width: '$50',
-  height: '$50',
-
-  background: '$gradient-vertical',
-  borderRadius: '$full',
-
-  img: {
-    borderRadius: '$full',
-    width: '$46',
-    height: '$46',
-  },
-})
-
 export const Book = styled('div', {
   display: 'flex',
   gap: '$20',

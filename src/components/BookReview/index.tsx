@@ -1,9 +1,10 @@
 import Image from 'next/image'
 
+import { Avatar } from '../Avatar'
 import { Rating } from '../Rating'
 import { Date } from '../Date'
 
-import { Container, Header, UserInfo, Avatar, Book, Details } from './styles'
+import { Container, Header, UserInfo, Book, Details } from './styles'
 
 interface BookReviewProps {
   ratingInfo: {
@@ -29,14 +30,7 @@ export function BookReview({ ratingInfo }: BookReviewProps) {
     <Container>
       <Header>
         <UserInfo>
-          <Avatar>
-            <Image
-              alt={`Avatar ${user.name}`}
-              src={user.avatarUrl}
-              width="50"
-              height="50"
-            />
-          </Avatar>
+          <Avatar name={user.name} imgUrl={user.avatarUrl} />
 
           <div>
             <p>{user.name}</p>
