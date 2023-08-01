@@ -7,18 +7,11 @@ export const Container = styled('div', {
   gap: '$20',
 
   padding: '$20 $18',
-  width: '$324',
+  maxWidth: '$324',
+  minwidth: 'min-content',
 
   background: '$gray-700',
   borderRadius: '$8',
-
-  '@xl': {
-    width: 'min-content',
-  },
-
-  '@lg': {
-    width: '100%',
-  },
 })
 
 export const Cover = styled(Image, {

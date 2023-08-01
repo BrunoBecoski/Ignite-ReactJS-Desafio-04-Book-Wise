@@ -7,7 +7,6 @@ const pulse = keyframes({
 })
 
 export const Container = styled('div', {
-  width: '100%',
   padding: '$20',
 
   borderRadius: '$8',
@@ -131,6 +130,9 @@ export const BookReview = styled(Container, {
 })
 
 export const BookCard = styled(Container, {
+  maxWidth: '$324',
+  minWidth: '216px',
+
   display: 'grid',
   gap: '$10 $20',
   gridTemplateColumns: '$75 auto',
@@ -179,15 +181,7 @@ export const BookCard = styled(Container, {
   },
 
   '@xl': {
-    '.name': {
-      width: '100%',
-    },
-
-    '.author': {
-      width: '100%',
-    },
-
-    '.rate': {
+    '.name, .author, .rate': {
       width: '100%',
     },
   },
@@ -203,6 +197,12 @@ export const BookCard = styled(Container, {
 
     '.rate': {
       width: '$125',
+    },
+  },
+
+  '@sm': {
+    '.name, .author, .rate': {
+      width: '100%',
     },
   },
 })
