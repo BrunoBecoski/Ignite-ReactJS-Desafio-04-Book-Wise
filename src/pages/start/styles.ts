@@ -27,14 +27,11 @@ export const Scroll = styled('div', {
     marginLeft: '$0',
   },
 
-  '> div': {
+  '.options': {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     gap: '$64',
-    '@xxl': {
-      gap: '$32',
-    },
   },
 })
 
@@ -149,6 +146,7 @@ export const MyBooks = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   gap: '$12',
+  alignItems: 'center',
 
   '> p': {
     marginBottom: '$4',
@@ -176,6 +174,7 @@ export const TrendingBooks = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   gap: '$12',
+  alignItems: 'center',
 
   '> div:first-child': {
     display: 'flex',

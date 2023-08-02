@@ -7,6 +7,7 @@ const pulse = keyframes({
 })
 
 export const Container = styled('div', {
+  width: '100%',
   padding: '$20',
 
   borderRadius: '$8',
@@ -14,6 +15,8 @@ export const Container = styled('div', {
 })
 
 export const BookReview = styled(Container, {
+  maxWidth: '$608',
+
   '.user': {
     display: 'grid',
     gap: '$10 $20',
@@ -131,7 +134,6 @@ export const BookReview = styled(Container, {
 
 export const BookCard = styled(Container, {
   maxWidth: '$324',
-  minWidth: '216px',
 
   display: 'grid',
   gap: '$10 $20',

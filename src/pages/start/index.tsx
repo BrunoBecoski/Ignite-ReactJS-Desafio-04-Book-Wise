@@ -92,7 +92,7 @@ export default function start() {
             <div />
           </Header>
 
-          <Options>
+          <Options className="options">
             <button
               className={selected === 'avaliations' ? 'selected' : ''}
               onClick={() => setSelected('avaliations')}
