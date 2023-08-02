@@ -33,6 +33,12 @@ export const Scroll = styled('div', {
     justifyContent: 'space-between',
     gap: '$64',
   },
+
+  '.content': {
+    display: 'flex',
+    gap: '$64',
+    justifyContent: 'space-between',
+  },
 })
 
 export const Header = styled('header', {
@@ -146,10 +152,10 @@ export const MyBooks = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   gap: '$12',
-  alignItems: 'center',
 
-  '> p': {
+  '.title': {
     marginBottom: '$4',
+    textAlign: 'left',
 
     fontFamily: '$default',
     color: '$gray-100',
@@ -160,7 +166,7 @@ export const MyBooks = styled('div', {
   '@lg': {
     display: 'none',
 
-    '> p': {
+    '.title': {
       display: 'none',
     },
 
@@ -176,7 +182,8 @@ export const TrendingBooks = styled('div', {
   gap: '$12',
   alignItems: 'center',
 
-  '> div:first-child': {
+  '.title': {
+    width: '100%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',

@@ -107,9 +107,9 @@ export default function start() {
             </button>
           </Options>
 
-          <div>
+          <div className="content">
             <MyBooks className={selected === 'avaliations' ? 'active' : ''}>
-              <p>Avaliações mais recentes</p>
+              <p className="title">Avaliações mais recentes</p>
 
               <SkeletonLoading type="bookReview" />
 
@@ -119,7 +119,7 @@ export default function start() {
             </MyBooks>
 
             <TrendingBooks className={selected === 'popular' ? 'active' : ''}>
-              <div>
+              <div className="title">
                 <p>Livros populares</p>
 
                 <span>

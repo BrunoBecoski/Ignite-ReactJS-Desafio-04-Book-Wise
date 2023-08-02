@@ -17,6 +17,10 @@ export const Container = styled('div', {
 export const BookReview = styled(Container, {
   maxWidth: '$608',
 
+  '@lg': {
+    maxWidth: '100%',
+  },
+
   '.user': {
     display: 'grid',
     gap: '$10 $20',
