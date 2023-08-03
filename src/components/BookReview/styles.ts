@@ -1,12 +1,8 @@
 import { styled } from '../../styles/stitches.config'
 
 export const Container = styled('div', {
-  maxWidth: '$608',
+  width: '100%',
   padding: '$24',
-
-  '@lg': {
-    maxWidth: '100%',
-  },
 
   borderRadius: '$8',
   background: '$gray-700',
