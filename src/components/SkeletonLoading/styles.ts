@@ -15,116 +15,98 @@ export const Container = styled('div', {
 })
 
 export const BookReview = styled(Container, {
-  '.user': {
-    display: 'grid',
-    gap: '$10 $20',
-    gridTemplateRows: '$20 $20',
-    gridTemplateColumns: '$50 $125 auto $125',
-    gridTemplateAreas: `
-      'avatar name . rate'
+  display: 'grid',
+  gap: '$10 $20',
+  gridTemplateRows: '$20 $20 $20 $20 auto',
+  gridTemplateColumns: '$50 $50 auto $125',
+  gridTemplateAreas: `
+      'avatar user . rate'
       'avatar date . .'
-    `,
+      '. . . .'
+      'cover cover name .'
+      'cover cover author .'
+      'cover cover description description'
+  `,
 
-    marginBottom: '$30',
+  div: {
+    borderRadius: '$6',
 
-    div: {
-      borderRadius: '$6',
-
-      animation: `${pulse} 1.5s infinite linear`,
-    },
-
-    '.avatar': {
-      width: '$50',
-      height: '$50',
-
-      borderRadius: '$full',
-
-      gridArea: 'avatar',
-    },
-
-    '.name': {
-      width: '$125',
-      height: '$20',
-
-      gridArea: 'name',
-    },
-
-    '.date': {
-      width: '$75',
-      height: '$18',
-
-      gridArea: 'date',
-    },
-
-    '.rate': {
-      width: '$125',
-      height: '$20',
-
-      gridArea: 'rate',
-    },
+    animation: `${pulse} 1.5s infinite linear`,
   },
 
-  '.book': {
-    display: 'grid',
-    gap: '$10 $20',
-    gridTemplateColumns: '$110 auto',
-    gridTemplateRows: '$20 $18 auto',
-    gridTemplateAreas: `
-      'cover name .'
-      'cover author .'
-      'cover description description'
-    `,
+  '.avatar': {
+    width: '$50',
+    height: '$50',
+
+    borderRadius: '$full',
+
+    gridArea: 'avatar',
+  },
+
+  '.user': {
+    width: '$125',
+    height: '$20',
+
+    gridArea: 'user',
+  },
+
+  '.date': {
+    width: '$75',
+    height: '$18',
+
+    gridArea: 'date',
+  },
+
+  '.rate': {
+    width: '$125',
+    height: '$20',
+
+    gridArea: 'rate',
+  },
+
+  '.cover': {
+    width: '$110',
+    height: '$150',
+
+    borderRadius: '$4',
+
+    gridArea: 'cover',
+  },
+
+  '.name': {
+    width: '$200',
+    height: '$20',
+
+    gridArea: 'name',
+  },
+
+  '.author': {
+    width: '$100',
+    height: '$18',
+
+    marginTop: '-$5',
+
+    gridArea: 'author',
+  },
+
+  '.description': {
+    display: 'flex',
+    gap: '$5',
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+
+    background: 'none',
+
+    gridArea: 'description',
+
+    animation: 'none',
 
     div: {
-      borderRadius: '$6',
-
-      animation: `${pulse} 1.5s infinite linear`,
-    },
-
-    '.cover': {
-      width: '$110',
-      height: '$150',
-
-      borderRadius: '$4',
-
-      gridArea: 'cover',
-    },
-
-    '.name': {
-      width: '$200',
-      height: '$20',
-
-      gridArea: 'name',
-    },
-
-    '.author': {
-      width: '$100',
+      width: '100%',
       height: '$18',
 
-      marginTop: '-$5',
-
-      gridArea: 'author',
-    },
-
-    '.description': {
-      display: 'flex',
-      gap: '$5',
-      flexDirection: 'column',
-      justifyContent: 'flex-end',
-
-      background: 'none',
-
-      gridArea: 'description',
-
-      animation: 'none',
-
-      div: {
-        width: '100%',
-        height: '$18',
-
-        '&:last-child': {
-          width: '50%',
-        },
+      '&:last-child': {
+        width: '50%',
       },
     },
   },
