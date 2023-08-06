@@ -7,7 +7,7 @@ interface SkeletonLoadingProps {
 export function SkeletonLoading({ type }: SkeletonLoadingProps) {
   if (type === 'bookReview') {
     return (
-      <BookReview>
+      <BookReview className="skeletonLoading_component">
         <div className="avatar" />
         <div className="user" />
         <div className="date" />
@@ -28,7 +28,7 @@ export function SkeletonLoading({ type }: SkeletonLoadingProps) {
 
   if (type === 'bookCard') {
     return (
-      <BookCard>
+      <BookCard className="skeletonLoading_component">
         <div className="cover" />
         <div className="name" />
         <div className="author" />
@@ -37,5 +37,5 @@ export function SkeletonLoading({ type }: SkeletonLoadingProps) {
     )
   }
 
-  return <Container />
+  return <Container className="skeletonLoading_component" />
 }

@@ -19,7 +19,7 @@ export function BookCard({ bookInfo }: BookCardProps) {
   const rate = sum / count
 
   return (
-    <Container>
+    <Container className="bookCard_component">
       <Cover
         alt={`Capa do livro ${name}`}
         src={coverUrl}

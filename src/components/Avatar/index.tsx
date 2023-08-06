@@ -9,7 +9,7 @@ interface AvatarProps {
 
 export function Avatar({ name, imgUrl }: AvatarProps) {
   return (
-    <Container title={name}>
+    <Container className="avatar_component" title={name}>
       <div>
         <Image alt={name} src={imgUrl} width="70" height="70" />
       </div>

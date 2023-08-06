@@ -27,7 +27,7 @@ export function BookReview({ ratingInfo }: BookReviewProps) {
   const { rate, date, description, user, book } = ratingInfo
 
   return (
-    <Container>
+    <Container className="bookReview_component">
       <Header>
         <UserInfo>
           <Avatar name={user.name} imgUrl={user.avatarUrl} />

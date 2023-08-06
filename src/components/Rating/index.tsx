@@ -8,7 +8,7 @@ interface RatingProps {
 
 export function Rating({ rate }: RatingProps) {
   return (
-    <Container title={`Nota: ${rate}`}>
+    <Container className="rating_component" title={`Nota: ${rate}`}>
       {rate <= 0 ? (
         <Star />
       ) : rate > 0 && rate < 1 ? (

@@ -14,7 +14,10 @@ interface sidebarProps {
 
 export function Sidebar({ optionSelected, sidebarIsOpen }: sidebarProps) {
   return (
-    <Container isOpen={{ '@lg': 'true', '@md': sidebarIsOpen }}>
+    <Container
+      className="sidebar_component"
+      isOpen={{ '@lg': 'true', '@md': sidebarIsOpen }}
+    >
       <div>
         <Image alt="Logo BookWise" src={logoImg} />
 

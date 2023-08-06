@@ -36,7 +36,7 @@ export function Overlay({
     <>
       {isBrowserSide &&
         createPortal(
-          <Container>
+          <Container className="overlay_component">
             <Background onClick={handleClose} isActive={background} />
             {children}
           </Container>,

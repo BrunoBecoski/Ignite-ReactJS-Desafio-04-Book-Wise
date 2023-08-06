@@ -14,12 +14,24 @@ export function Date({ date }: DateProps) {
   const dateToNow = dayjs(date).fromNow()
 
   if (isToday) {
-    return <Container title={dateFormat}>Hoje</Container>
+    return (
+      <Container className="date_component" title={dateFormat}>
+        Hoje
+      </Container>
+    )
   }
 
   if (isYesterday) {
-    return <Container title={dateFormat}>Ontem</Container>
+    return (
+      <Container className="date_component" title={dateFormat}>
+        Ontem
+      </Container>
+    )
   }
 
-  return <Container title={dateFormat}>{dateToNow}</Container>
+  return (
+    <Container className="date_component" title={dateFormat}>
+      {dateToNow}
+    </Container>
+  )
 }
