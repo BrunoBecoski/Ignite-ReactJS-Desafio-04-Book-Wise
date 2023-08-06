@@ -28,6 +28,20 @@ export const BookReview = styled(Container, {
       'cover cover description description'
   `,
 
+  '@sm': {
+    gridTemplateRows: '$20 $20 $20 $20 $20 $100',
+    gridTemplateColumns: '$50 $50 50% 50%',
+    gridTemplateAreas: `
+      'avatar user user .'
+      'avatar date date .'
+      '. . . .'
+      'cover cover rate rate'
+      'cover cover name name'
+      'cover cover author author'
+      'description description description description'
+  `,
+  },
+
   div: {
     borderRadius: '$6',
 
