@@ -20,27 +20,13 @@ export const BookReview = styled(Container, {
   gridTemplateRows: '$20 $20 $20 $20 auto',
   gridTemplateColumns: '$50 $50 auto $125',
   gridTemplateAreas: `
-      'avatar user . rate'
-      'avatar date . .'
+  'avatar user . rate'
+  'avatar date . .'
       '. . . .'
       'cover cover name .'
       'cover cover author .'
       'cover cover description description'
-  `,
-
-  '@sm': {
-    gridTemplateRows: '$20 $20 $20 $20 $20 $100',
-    gridTemplateColumns: '$50 $50 50% 50%',
-    gridTemplateAreas: `
-      'avatar user user .'
-      'avatar date date .'
-      '. . . .'
-      'cover cover rate rate'
-      'cover cover name name'
-      'cover cover author author'
-      'description description description description'
-  `,
-  },
+      `,
 
   div: {
     borderRadius: '$6',
@@ -121,6 +107,30 @@ export const BookReview = styled(Container, {
 
       '&:last-child': {
         width: '50%',
+      },
+    },
+  },
+
+  '@sm': {
+    gridTemplateRows: '$20 $20 $20 $20 $20 $100',
+    gridTemplateColumns: '$50 $40 auto',
+    gridTemplateAreas: `
+      'avatar user user'
+      'avatar date date'
+      '. . .'
+      'cover cover rate'
+      'cover cover name'
+      'cover cover author'
+      'description description description'
+  `,
+
+    '.name': {
+      width: '100%',
+    },
+
+    '.description': {
+      'div:last-child': {
+        display: 'none',
       },
     },
   },

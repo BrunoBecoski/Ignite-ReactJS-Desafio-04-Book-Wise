@@ -149,6 +149,7 @@ export const Options = styled('div', {
 })
 
 export const MyBooks = styled('div', {
+  width: '100%',
   display: 'flex',
   flexDirection: 'column',
   gap: '$12',
