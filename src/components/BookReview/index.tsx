@@ -4,7 +4,7 @@ import { Avatar } from '../Avatar'
 import { Rating } from '../Rating'
 import { Date } from '../Date'
 
-import { Container, Header, UserInfo, Book, Details } from './styles'
+import { Container } from './styles'
 
 interface BookReviewProps {
   ratingInfo: {
@@ -28,20 +28,20 @@ export function BookReview({ ratingInfo }: BookReviewProps) {
 
   return (
     <Container className="bookReview_component">
-      <Header>
-        <UserInfo>
+      <div className="header">
+        <div className="userInfo">
           <Avatar name={user.name} imgUrl={user.avatarUrl} />
 
           <div>
             <p>{user.name}</p>
             <Date date={date} />
           </div>
-        </UserInfo>
+        </div>
 
         <Rating rate={rate} />
-      </Header>
+      </div>
 
-      <Book>
+      <div className="book">
         <Image
           alt={`Capa do livro ${book.name}`}
           src={book.coverUrl}
@@ -49,15 +49,15 @@ export function BookReview({ ratingInfo }: BookReviewProps) {
           height="152"
         />
 
-        <Details>
+        <div className="details">
           <div>
             <strong>{book.name}</strong>
             <span>{book.author}</span>
           </div>
 
-          <p>{description}</p>
-        </Details>
-      </Book>
+          <p className="description">{description}</p>
+        </div>
+      </div>
     </Container>
   )
 }
