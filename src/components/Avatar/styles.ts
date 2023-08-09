@@ -1,8 +1,8 @@
 import { styled } from '../../styles/stitches.config'
 
 export const Container = styled('div', {
-  width: '$52',
-  height: '$52',
+  width: '$54',
+  height: '$54',
 
   padding: '$2',
   borderRadius: '$full',
@@ -12,6 +12,9 @@ export const Container = styled('div', {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+
+    width: '$50',
+    height: '$50',
 
     overflow: 'hidden',
 

@@ -28,36 +28,25 @@ export function BookReview({ ratingInfo }: BookReviewProps) {
 
   return (
     <Container className="bookReview_component">
-      <div className="header">
-        <div className="userInfo">
-          <Avatar name={user.name} imgUrl={user.avatarUrl} />
+      <Avatar name={user.name} imgUrl={user.avatarUrl} />
 
-          <div>
-            <p>{user.name}</p>
-            <Date date={date} />
-          </div>
-        </div>
+      <p className="user">{user.name}</p>
+      <Date date={date} />
 
-        <Rating rate={rate} />
-      </div>
+      <Rating rate={rate} />
 
-      <div className="book">
-        <Image
-          alt={`Capa do livro ${book.name}`}
-          src={book.coverUrl}
-          width="108"
-          height="152"
-        />
+      <Image
+        className="cover"
+        alt={`Capa do livro ${book.name}`}
+        src={book.coverUrl}
+        width="108"
+        height="152"
+      />
 
-        <div className="details">
-          <div>
-            <strong>{book.name}</strong>
-            <span>{book.author}</span>
-          </div>
+      <strong className="name">{book.name}</strong>
+      <span className="author">{book.author}</span>
 
-          <p className="description">{description}</p>
-        </div>
-      </div>
+      <p className="description">{description}</p>
     </Container>
   )
 }
