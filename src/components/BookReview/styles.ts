@@ -86,9 +86,24 @@ export const Container = styled('div', {
     color: '$gray-300',
     lineHeight: '$160',
     fontSize: '$14',
+  },
 
-    '@sm': {
-      '-webkit-line-clamp': '3',
-    },
+  '@sm': {
+    display: 'grid',
+    gridTemplateColumns: '$54 $48 auto',
+    gridTemplateRows: '$20 $20 auto $20 $20 $20 auto auto',
+
+    gap: '$16',
+
+    gridTemplateAreas: `
+      'avatar user user'
+      'avatar date date'
+      '. . .'
+      'cover cover rating'
+      'cover cover name'
+      'cover cover author'
+      'cover cover .'
+      'description description description'
+    `,
   },
 })
