@@ -16,17 +16,19 @@ export const Container = styled('div', {
 
 export const BookReview = styled(Container, {
   display: 'grid',
-  gap: '$10 $20',
-  gridTemplateRows: '$20 $20 $20 $20 auto',
-  gridTemplateColumns: '$50 $50 auto $125',
+  gridTemplateColumns: '$54 $48 auto $96',
+  gridTemplateRows: '$20 $20 auto $20 auto',
+
+  gap: '$16',
+
   gridTemplateAreas: `
-  'avatar user . rate'
-  'avatar date . .'
-      '. . . .'
-      'cover cover name .'
-      'cover cover author .'
-      'cover cover description description'
-      `,
+    'avatar user user rating'
+    'avatar date date .'
+    '. . . .'
+    'cover cover name .'
+    'cover cover author .'
+    'cover cover description description'
+  `,
 
   div: {
     borderRadius: '$6',
@@ -54,14 +56,16 @@ export const BookReview = styled(Container, {
     width: '$75',
     height: '$18',
 
+    marginTop: '-$10',
+
     gridArea: 'date',
   },
 
-  '.rate': {
-    width: '$125',
+  '.rating': {
+    width: '$96',
     height: '$20',
 
-    gridArea: 'rate',
+    gridArea: 'rating',
   },
 
   '.cover': {
@@ -84,7 +88,7 @@ export const BookReview = styled(Container, {
     width: '$100',
     height: '$18',
 
-    marginTop: '-$5',
+    marginTop: '-$10',
 
     gridArea: 'author',
   },
@@ -112,17 +116,22 @@ export const BookReview = styled(Container, {
   },
 
   '@sm': {
-    gridTemplateRows: '$20 $20 $20 $20 $20 $100',
-    gridTemplateColumns: '$50 $40 auto',
+    display: 'grid',
+    gridTemplateColumns: '$54 $48 auto',
+    gridTemplateRows: '$20 $20 auto $20 $20 $20 auto auto',
+
+    gap: '$16',
+
     gridTemplateAreas: `
       'avatar user user'
       'avatar date date'
       '. . .'
-      'cover cover rate'
+      'cover cover rating'
       'cover cover name'
       'cover cover author'
+      'cover cover .'
       'description description description'
-  `,
+    `,
 
     '.name': {
       width: '100%',

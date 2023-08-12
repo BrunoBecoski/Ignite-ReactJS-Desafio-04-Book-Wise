@@ -11,7 +11,7 @@ export function SkeletonLoading({ type }: SkeletonLoadingProps) {
         <div className="avatar" />
         <div className="user" />
         <div className="date" />
-        <div className="rate" />
+        <div className="rating" />
 
         <div className="cover" />
         <div className="name" />
