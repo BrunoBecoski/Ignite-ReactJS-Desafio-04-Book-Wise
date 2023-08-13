@@ -17,7 +17,7 @@ export const Container = styled('div', {
 export const BookReview = styled(Container, {
   display: 'grid',
   gridTemplateColumns: '$54 $48 auto $96',
-  gridTemplateRows: '$20 $20 auto $20 auto',
+  gridTemplateRows: '$20 $20 auto $20 auto auto',
 
   gap: '$16',
 
@@ -118,7 +118,7 @@ export const BookReview = styled(Container, {
   '@sm': {
     display: 'grid',
     gridTemplateColumns: '$54 $48 auto',
-    gridTemplateRows: '$20 $20 auto $20 $20 $20 auto auto',
+    gridTemplateRows: '$20 $20 auto $20 auto $20 auto auto',
 
     gap: '$16',
 

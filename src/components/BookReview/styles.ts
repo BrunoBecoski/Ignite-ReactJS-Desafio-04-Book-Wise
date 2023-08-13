@@ -9,7 +9,7 @@ export const Container = styled('div', {
 
   display: 'grid',
   gridTemplateColumns: '$54 $48 auto $96',
-  gridTemplateRows: '$20 $20 auto $20 auto',
+  gridTemplateRows: '$20 $20 auto $20 auto auto',
 
   gap: '$16',
 
@@ -91,7 +91,7 @@ export const Container = styled('div', {
   '@sm': {
     display: 'grid',
     gridTemplateColumns: '$54 $48 auto',
-    gridTemplateRows: '$20 $20 auto $20 $20 $20 auto auto',
+    gridTemplateRows: '$20 $20 auto $20 auto $20 auto auto',
 
     gap: '$16',
 
