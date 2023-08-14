@@ -25,8 +25,10 @@ interface BooksTrendingProps {
   id: string
   name: string
   author: string
-  cover_url: string
+  coverUrl: string
   rate: number
+  count: number
+  sum: number
 }
 interface BooksRatingsProps {
   id: string
