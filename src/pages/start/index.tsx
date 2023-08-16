@@ -8,6 +8,7 @@ import { Sidebar } from '../../components/Sidebar'
 import { BookReview } from '../../components/BookReview'
 import { BookCard } from '../../components/BookCard'
 import { Overlay } from '../../components/Overlay'
+import { SkeletonLoading } from '../../components/SkeletonLoading'
 
 import {
   Container,
@@ -29,6 +30,7 @@ interface BooksTrendingProps {
   count: number
   sum: number
 }
+
 interface BooksRatingsProps {
   id: string
   rate: number
@@ -112,9 +114,17 @@ export default function start() {
             <MyBooks className={selected === 'avaliations' ? 'active' : ''}>
               <p className="title">Avaliações mais recentes</p>
 
-              {booksRatings.map((rating) => (
-                <BookReview key={rating.id} ratingInfo={rating} />
-              ))}
+              {booksRatings.length === 0 ? (
+                <>
+                  <SkeletonLoading type="bookReview" />
+                  <SkeletonLoading type="bookReview" />
+                  <SkeletonLoading type="bookReview" />
+                </>
+              ) : (
+                booksRatings.map((rating) => (
+                  <BookReview key={rating.id} ratingInfo={rating} />
+                ))
+              )}
             </MyBooks>
 
             <TrendingBooks className={selected === 'popular' ? 'active' : ''}>
