@@ -8,7 +8,6 @@ import { Sidebar } from '../../components/Sidebar'
 import { BookReview } from '../../components/BookReview'
 import { BookCard } from '../../components/BookCard'
 import { Overlay } from '../../components/Overlay'
-import { SkeletonLoading } from '../../components/SkeletonLoading'
 
 import {
   Container,
@@ -113,8 +112,6 @@ export default function start() {
             <MyBooks className={selected === 'avaliations' ? 'active' : ''}>
               <p className="title">Avaliações mais recentes</p>
 
-              <SkeletonLoading type="bookReview" />
-
               {booksRatings.map((rating) => (
                 <BookReview key={rating.id} ratingInfo={rating} />
               ))}
@@ -129,8 +126,6 @@ export default function start() {
                   <CaretRight weight="bold" />
                 </span>
               </div>
-
-              <SkeletonLoading type="bookCard" />
 
               {booksTrending.map((book) => (
                 <BookCard key={book.id} bookInfo={book} />
