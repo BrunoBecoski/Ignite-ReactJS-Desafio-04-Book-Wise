@@ -137,9 +137,17 @@ export default function start() {
                 </span>
               </div>
 
-              {booksTrending.map((book) => (
-                <BookCard key={book.id} bookInfo={book} />
-              ))}
+              {booksTrending.length === 0 ? (
+                <>
+                  <SkeletonLoading type="bookCard" />
+                  <SkeletonLoading type="bookCard" />
+                  <SkeletonLoading type="bookCard" />
+                </>
+              ) : (
+                booksTrending.map((book) => (
+                  <BookCard key={book.id} bookInfo={book} />
+                ))
+              )}
             </TrendingBooks>
           </div>
         </Scroll>
