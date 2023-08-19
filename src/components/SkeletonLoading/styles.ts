@@ -18,7 +18,6 @@ export const BookReview = styled(Container, {
   display: 'grid',
   gridTemplateColumns: '$54 $48 auto $96',
   gridTemplateRows: '$20 $20 auto $20 auto auto',
-
   gap: '$16',
 
   gridTemplateAreas: `
@@ -147,6 +146,7 @@ export const BookReview = styled(Container, {
 
 export const BookCard = styled(Container, {
   maxWidth: '$324',
+  width: '100%',
 
   display: 'grid',
   gap: '$10 $20',
