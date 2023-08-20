@@ -146,7 +146,6 @@ export const BookReview = styled(Container, {
 
 export const BookCard = styled(Container, {
   maxWidth: '$324',
-  width: '100%',
 
   display: 'grid',
   gap: '$10 $20',
@@ -196,12 +195,15 @@ export const BookCard = styled(Container, {
   },
 
   '@xl': {
+    width: '$256',
     '.name, .author, .rate': {
       width: '100%',
     },
   },
 
   '@lg': {
+    width: '100%',
+
     '.name': {
       width: '$170',
     },
