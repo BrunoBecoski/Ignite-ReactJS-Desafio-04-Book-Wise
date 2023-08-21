@@ -14,6 +14,10 @@ export default async function handler(
 
   const max = Number(request.query.max)
 
+  const page = Number(request.query.page)
+
+  const skip = (page - 1) * max
+
   if (orderBy === 'latest') {
     const ratings = await prisma.rating.findMany({
       orderBy: [
@@ -26,6 +30,7 @@ export default async function handler(
         book: true,
       },
       take: max,
+      skip,
     })
 
     const ratingsFormated = ratings.map((rating) => {
