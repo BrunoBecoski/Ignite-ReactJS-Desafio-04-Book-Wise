@@ -57,7 +57,7 @@ export default function start() {
     async function apiRequest() {
       const bookTrending = await api.get('/books/trending?max=4')
 
-      const bookRatings = await api.get('/ratings?orderBy=latest&max=3')
+      const bookRatings = await api.get('/ratings?max=3')
 
       setBooksTrending(bookTrending.data)
       setBooksRatings(bookRatings.data)
