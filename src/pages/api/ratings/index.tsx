@@ -10,9 +10,9 @@ export default async function handler(
     return response.status(405).end()
   }
 
-  const max = Number(request.query.max)
+  const max = Number(request.query.max) || 3
 
-  const page = Number(request.query.page)
+  const page = Number(request.query.page) || 1
 
   let skip = 0
 
