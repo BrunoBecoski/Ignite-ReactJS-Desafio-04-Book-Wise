@@ -14,10 +14,12 @@ export default async function handler(
 
   const page = Number(request.query.page) || 1
 
-  let skip = 0
+  let skip
 
-  if (page) {
-    skip = (page - 1) * max
+  if (page === 1) {
+    skip = 0
+  } else {
+    skip = page * max - max
   }
 
   const ratings = await prisma.rating.findMany({
