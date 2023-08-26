@@ -19,7 +19,7 @@ export default async function handler(
     return response.status(405).end()
   }
 
-  const max = Number(request.query.max)
+  const max = Number(request.query.max) || 4
 
   const ratingWithBook: ratingWithBookProps[] = await prisma.$queryRaw`
     SELECT
