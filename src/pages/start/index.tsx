@@ -125,6 +125,8 @@ export default function start() {
                   <BookReview key={rating.id} ratingInfo={rating} />
                 ))
               )}
+
+              <button>Carregar mais avaliações</button>
             </MyBooks>
 
             <TrendingBooks className={selected === 'popular' ? 'active' : ''}>
