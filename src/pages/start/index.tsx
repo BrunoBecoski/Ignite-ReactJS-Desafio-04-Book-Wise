@@ -9,6 +9,7 @@ import { BookReview } from '../../components/BookReview'
 import { BookCard } from '../../components/BookCard'
 import { Overlay } from '../../components/Overlay'
 import { SkeletonLoading } from '../../components/SkeletonLoading'
+import { Button } from '../../components/Button'
 
 import {
   Container,
@@ -126,7 +127,7 @@ export default function start() {
                 ))
               )}
 
-              <button>Carregar mais avaliações</button>
+              <Button>Carregar mais avaliações</Button>
             </MyBooks>
 
             <TrendingBooks className={selected === 'popular' ? 'active' : ''}>

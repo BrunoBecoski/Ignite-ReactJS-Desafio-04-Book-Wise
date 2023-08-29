@@ -7,30 +7,6 @@ export const Container = styled('div', {
   flexDirection: 'column',
 
   background: '$gray-800',
-
-  button: {
-    padding: '$20 $24',
-    height: 'fit-content',
-    width: 'fit-content',
-
-    cursor: 'pointer',
-    border: 'none',
-    borderRadius: '$8',
-    background: '$gray-600',
-
-    fontFamily: '$default',
-    fontSize: '$18',
-    lineHeight: '$160',
-    fontWeight: '$bold',
-    color: '$gray-200',
-    textDecoration: 'none',
-
-    transition: '$background',
-
-    '&:hover': {
-      background: '$gray-500',
-    },
-  },
 })
 
 export const Content = styled('div', {
