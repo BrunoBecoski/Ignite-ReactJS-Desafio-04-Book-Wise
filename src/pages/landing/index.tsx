@@ -3,15 +3,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { RocketLaunch } from '@phosphor-icons/react'
 
-import {
-  Container,
-  Banner,
-  Content,
-  Login,
-  Header,
-  Options,
-  Button,
-} from './styles'
+import { Button } from '../../components/Button'
+
+import { Container, Banner, Content, Login, Header, Options } from './styles'
 
 import logoImg from '../../assets/logo.svg'
 import googleIconImg from '../../assets/google-icon.svg'
