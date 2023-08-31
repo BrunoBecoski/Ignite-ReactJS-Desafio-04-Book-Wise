@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import { RocketLaunch } from '@phosphor-icons/react'
 
 import { Button } from '../../components/Button'
@@ -40,7 +39,7 @@ export default function Landing() {
               Entrar com Github
             </Button>
 
-            <Button as={Link} href="/start">
+            <Button href="/start">
               <RocketLaunch />
               Acessar como visitante
             </Button>
