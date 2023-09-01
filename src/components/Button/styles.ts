@@ -7,7 +7,7 @@ export const Container = styled('button', {
 
   padding: '$20 $24',
   height: 'fit-content',
-  width: 'fit-content',
+  width: '$384',
 
   cursor: 'pointer',
   border: 'none',
@@ -32,6 +32,10 @@ export const Container = styled('button', {
 
   '&:hover': {
     background: '$gray-500',
+  },
+
+  '@sm': {
+    width: '100%',
   },
 })
 
