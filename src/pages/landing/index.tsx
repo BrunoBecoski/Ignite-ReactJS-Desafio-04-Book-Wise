@@ -29,17 +29,17 @@ export default function Landing() {
           </Header>
 
           <Options>
-            <Button>
+            <Button type="option">
               <Image alt="Google icon" src={googleIconImg} />
               Entrar com Google
             </Button>
 
-            <Button>
+            <Button type="option">
               <Image alt="Github icon" src={githubIconImg} />
               Entrar com Github
             </Button>
 
-            <Button href="/start">
+            <Button type="option" href="/start">
               <RocketLaunch />
               Acessar como visitante
             </Button>

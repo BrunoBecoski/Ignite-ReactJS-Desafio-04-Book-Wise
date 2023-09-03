@@ -5,12 +5,12 @@ import { Default, Option } from './styles'
 
 interface ButtonProps {
   href?: string
-  variant?: 'option'
+  type?: 'option'
   children: ReactNode
 }
 
-export function Button({ variant, href, children }: ButtonProps) {
-  if (variant === 'option') {
+export function Button({ type, href, children }: ButtonProps) {
+  if (type === 'option') {
     if (href) {
       return (
         <Option as={Link} href={href}>

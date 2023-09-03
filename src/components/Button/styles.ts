@@ -1,13 +1,8 @@
 import { styled } from '../../styles/stitches.config'
 
 const Container = styled('button', {
-  display: 'flex',
-  alignItems: 'center',
-  gap: '$20',
-
-  padding: '$20 $24',
   height: 'fit-content',
-  width: '$384',
+  padding: '$20 $24',
 
   cursor: 'pointer',
   border: 'none',
@@ -23,6 +18,22 @@ const Container = styled('button', {
 
   transition: '$background',
 
+  '&:hover': {
+    background: '$gray-500',
+  },
+})
+
+export const Default = styled(Container, {
+  width: 'fit-content',
+})
+
+export const Option = styled(Container, {
+  width: '$384',
+
+  display: 'flex',
+  alignItems: 'center',
+  gap: '$20',
+
   'img, svg': {
     width: '$32',
     height: '$32',
@@ -30,15 +41,7 @@ const Container = styled('button', {
     color: '$purple-100',
   },
 
-  '&:hover': {
-    background: '$gray-500',
-  },
-
   '@sm': {
     width: '100%',
   },
 })
-
-export const Default = styled(Container, {})
-
-export const Option = styled(Container, {})
