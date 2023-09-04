@@ -173,6 +173,7 @@ export const { styled, getCssText, keyframes } = createStitches({
       color: 'color .2s',
       fill: 'fill .2s',
       transform: 'transform .5s',
+      borderColor: 'borderColor .2s',
     },
 
     colors: {
