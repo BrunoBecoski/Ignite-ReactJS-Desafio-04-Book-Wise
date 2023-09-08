@@ -1,16 +1,16 @@
-import { ReactNode } from 'react'
+import { ButtonHTMLAttributes, ReactNode } from 'react'
 import Link from 'next/link'
 
 import { Default, Option } from './styles'
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   href?: string
-  type?: 'option'
+  variant?: 'option'
   children: ReactNode
 }
 
-export function Button({ type, href, children }: ButtonProps) {
-  if (type === 'option') {
+export function Button({ variant, href, children, ...props }: ButtonProps) {
+  if (variant === 'option') {
     if (href) {
       return (
         <Option as={Link} href={href}>
@@ -18,8 +18,8 @@ export function Button({ type, href, children }: ButtonProps) {
         </Option>
       )
     }
-    return <Option>{children}</Option>
+    return <Option {...props}>{children}</Option>
   }
 
-  return <Default>{children}</Default>
+  return <Default {...props}>{children}</Default>
 }

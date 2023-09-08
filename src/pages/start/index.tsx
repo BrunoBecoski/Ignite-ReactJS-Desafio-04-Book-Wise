@@ -48,7 +48,7 @@ interface BooksRatingsProps {
   }
 }
 
-export default function start() {
+export default function Start() {
   const [selected, setSelected] = useState('avaliations')
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false)
   const [booksTrending, setBooksTrending] = useState<BooksTrendingProps[]>([])
