@@ -4,6 +4,11 @@ import { ChartLineUp, CaretRight, List } from '@phosphor-icons/react'
 
 import { api } from '../../libs/axios'
 
+import {
+  GetBooksTrending,
+  BooksTrendingProps,
+} from '../../utils/getBooksTrending'
+
 import { Sidebar } from '../../components/Sidebar'
 import { BookReview } from '../../components/BookReview'
 import { BookCard } from '../../components/BookCard'
@@ -21,16 +26,6 @@ import {
   MyBooks,
   TrendingBooks,
 } from './styles'
-
-interface BooksTrendingProps {
-  id: string
-  name: string
-  author: string
-  coverUrl: string
-  rate: number
-  count: number
-  sum: number
-}
 
 interface BooksRatingsProps {
   id: string
@@ -56,11 +51,11 @@ export default function Start() {
 
   useEffect(() => {
     async function apiRequest() {
-      const bookTrending = await api.get('/books/trending')
+      const booksTrendingData = await GetBooksTrending()
+      setBooksTrending(booksTrendingData)
 
       const bookRatings = await api.get('/ratings')
 
-      setBooksTrending(bookTrending.data)
       setBooksRatings(bookRatings.data)
     }
 
