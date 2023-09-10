@@ -2,12 +2,11 @@ import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import { ChartLineUp, CaretRight, List } from '@phosphor-icons/react'
 
-import { api } from '../../libs/axios'
-
 import {
   GetBooksTrending,
   BooksTrendingProps,
 } from '../../utils/getBooksTrending'
+import { GetRatings, RatingsProps } from '../../utils/getRatings'
 
 import { Sidebar } from '../../components/Sidebar'
 import { BookReview } from '../../components/BookReview'
@@ -27,36 +26,19 @@ import {
   TrendingBooks,
 } from './styles'
 
-interface BooksRatingsProps {
-  id: string
-  rate: number
-  date: string
-  description: string
-  user: {
-    name: string
-    avatarUrl: string
-  }
-  book: {
-    coverUrl: string
-    name: string
-    author: string
-  }
-}
-
 export default function Start() {
   const [selected, setSelected] = useState('avaliations')
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false)
   const [booksTrending, setBooksTrending] = useState<BooksTrendingProps[]>([])
-  const [booksRatings, setBooksRatings] = useState<BooksRatingsProps[]>([])
+  const [ratings, setRatings] = useState<RatingsProps[]>([])
 
   useEffect(() => {
     async function apiRequest() {
       const booksTrendingData = await GetBooksTrending()
       setBooksTrending(booksTrendingData)
 
-      const bookRatings = await api.get('/ratings')
-
-      setBooksRatings(bookRatings.data)
+      const ratingsData = await GetRatings()
+      setRatings(ratingsData)
     }
 
     apiRequest()
@@ -110,14 +92,14 @@ export default function Start() {
             <MyBooks className={selected === 'avaliations' ? 'active' : ''}>
               <p className="title">Avaliações mais recentes</p>
 
-              {booksRatings.length === 0 ? (
+              {ratings.length === 0 ? (
                 <>
                   <SkeletonLoading type="bookReview" />
                   <SkeletonLoading type="bookReview" />
                   <SkeletonLoading type="bookReview" />
                 </>
               ) : (
-                booksRatings.map((rating) => (
+                ratings.map((rating) => (
                   <BookReview key={rating.id} ratingInfo={rating} />
                 ))
               )}
