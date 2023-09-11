@@ -37,12 +37,20 @@ export default function Start() {
       const booksTrendingData = await GetBooksTrending()
       setBooksTrending(booksTrendingData)
 
-      const ratingsData = await GetRatings()
+      const ratingsData = await GetRatings({})
       setRatings(ratingsData)
     }
 
     apiRequest()
   }, [])
+
+  async function handleLoadRatings() {
+    const loadRatings = await GetRatings({
+      page: 2,
+    })
+
+    console.log(loadRatings)
+  }
 
   return (
     <Container className={sidebarIsOpen ? 'open' : 'close'}>
@@ -104,7 +112,9 @@ export default function Start() {
                 ))
               )}
 
-              <Button>Carregar mais avaliações</Button>
+              <Button onClick={handleLoadRatings}>
+                Carregar mais avaliações
+              </Button>
             </MyBooks>
 
             <TrendingBooks className={selected === 'popular' ? 'active' : ''}>
