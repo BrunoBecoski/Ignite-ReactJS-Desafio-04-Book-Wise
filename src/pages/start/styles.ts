@@ -154,6 +154,8 @@ export const MyBooks = styled('div', {
   flexDirection: 'column',
   gap: '$12',
 
+  maxWidth: '66%',
+
   '.title': {
     marginBottom: '$4',
     textAlign: 'left',
@@ -182,6 +184,10 @@ export const TrendingBooks = styled('div', {
   flexDirection: 'column',
   gap: '$12',
   alignItems: 'center',
+
+  position: 'fixed',
+  bottom: 0,
+  right: 0,
 
   '.title': {
     width: '100%',
