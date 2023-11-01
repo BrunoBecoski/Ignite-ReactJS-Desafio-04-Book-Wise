@@ -1,11 +1,12 @@
+import { useEffect, useState } from 'react'
+
+import { GetRatings, RatingsProps } from '../../utils/getRatings'
+
 import { SkeletonLoading } from '../SkeletonLoading'
 import { BookReview } from '../BookReview'
 import { Button } from '../Button'
 
-import { GetRatings, RatingsProps } from '../../utils/getRatings'
-
 import { Container } from './styles'
-import { useEffect, useState } from 'react'
 
 export function Timeline() {
   const [ratings, setRatings] = useState<RatingsProps[]>([])
@@ -28,7 +29,7 @@ export function Timeline() {
   }, [])
 
   return (
-    <Container>
+    <Container className="timeline_component">
       <p className="title">Avaliações mais recentes</p>
 
       {ratings.length === 0 ? (

@@ -1,6 +1,6 @@
 import { api } from '../libs/axios'
 
-export interface BooksTrendingProps {
+export interface TrendingBooksProps {
   id: string
   name: string
   author: string
@@ -10,8 +10,8 @@ export interface BooksTrendingProps {
   sum: number
 }
 
-export async function GetBooksTrending() {
-  const response = await api.get<BooksTrendingProps[]>('/books/trending')
+export async function GetTrendingBooks() {
+  const response = await api.get<TrendingBooksProps[]>('/books/trending')
 
   if (response.status === 200) {
     return response.data
