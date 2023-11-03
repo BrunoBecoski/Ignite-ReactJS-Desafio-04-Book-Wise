@@ -98,7 +98,7 @@ export const Navigation = styled(Link, {
     fill: '$gray-400',
   },
 
-  transtion: '$fill $color',
+  transition: '$fill $color',
 
   '&:hover': {
     color: '$gray-100',
