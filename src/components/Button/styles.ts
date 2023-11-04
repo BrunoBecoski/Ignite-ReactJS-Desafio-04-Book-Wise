@@ -60,3 +60,26 @@ export const Option = styled(Container, {
     width: '100%',
   },
 })
+
+export const Icon = styled(Container, {
+  width: '$40',
+  height: '$40',
+  padding: '$8',
+
+  border: 'none',
+  borderRadius: '$4',
+  background: '$gray-600',
+
+  svg: {
+    width: '$24',
+    height: '$24',
+
+    fill: '$purple-100',
+  },
+
+  transition: '$background',
+
+  '&:hover': {
+    background: '$gray-500',
+  },
+})

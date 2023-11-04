@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import Image from 'next/image'
-import { ChartLineUp, Binoculars, SignIn } from '@phosphor-icons/react'
+import { ChartLineUp, Binoculars, SignIn, List, X } from '@phosphor-icons/react'
 
 import { Overlay } from '../Overlay'
 
-import { Container, Menu, Navigation, Login } from './styles'
+import { Header, Container, Menu, Navigation, Login } from './styles'
 
 import logoImg from '../../assets/logo.svg'
+import { Button } from '../Button'
 
 type Pages = 'start' | 'explore'
 
@@ -17,37 +18,55 @@ interface NavigateProps {
 export function Navigate({ page }: NavigateProps) {
   const [isOpen, setIsOpen] = useState(false)
 
+  function handleChangeIsOpen() {
+    setIsOpen((prevState) => !prevState)
+  }
+
   return (
-    <Overlay
-      isOpen={isOpen}
-      setIsOpen={() => setIsOpen(!isOpen)}
-      background={isOpen}
-    >
-      <Container
-        className="sidebar_component"
-        isOpen={{ '@lg': 'true', '@md': isOpen }}
+    <>
+      <Header isOpen={isOpen}>
+        <Button
+          variant="icon"
+          onClick={handleChangeIsOpen}
+          title={isOpen ? 'Fechar navegação' : 'Abrir navegação'}
+          style={{
+            background: isOpen ? 'transparent' : '',
+          }}
+        >
+          {isOpen ? <X /> : <List />}
+        </Button>
+      </Header>
+      <Overlay
+        isOpen={isOpen}
+        setIsOpen={handleChangeIsOpen}
+        background={isOpen}
       >
-        <div>
-          <Image alt="Logo BookWise" src={logoImg} />
+        <Container
+          className="sidebar_component"
+          isOpen={{ '@lg': 'true', '@md': isOpen }}
+        >
+          <div>
+            <Image alt="Logo BookWise" src={logoImg} />
 
-          <Menu>
-            <Navigation href="/start" selected={page === 'start'}>
-              <ChartLineUp weight={page === 'start' ? 'bold' : 'regular'} />
-              Início
-            </Navigation>
+            <Menu>
+              <Navigation href="/start" selected={page === 'start'}>
+                <ChartLineUp weight={page === 'start' ? 'bold' : 'regular'} />
+                Início
+              </Navigation>
 
-            <Navigation href="/explore" selected={page === 'explore'}>
-              <Binoculars weight={page === 'explore' ? 'bold' : 'regular'} />
-              Explorar
-            </Navigation>
-          </Menu>
-        </div>
+              <Navigation href="/explore" selected={page === 'explore'}>
+                <Binoculars weight={page === 'explore' ? 'bold' : 'regular'} />
+                Explorar
+              </Navigation>
+            </Menu>
+          </div>
 
-        <Login href="/">
-          Fazer login
-          <SignIn />
-        </Login>
-      </Container>
-    </Overlay>
+          <Login href="/">
+            Fazer login
+            <SignIn />
+          </Login>
+        </Container>
+      </Overlay>
+    </>
   )
 }

@@ -4,6 +4,30 @@ import { styled } from '../../styles/stitches.config'
 
 import sidebarBackground from '../../assets/sidebar_background.svg'
 
+export const Header = styled('header', {
+  position: 'absolute',
+  top: '$10',
+  left: '$10',
+
+  display: 'none',
+  zIndex: 100,
+
+  variants: {
+    isOpen: {
+      true: {
+        borderColor: 'FireBrick',
+      },
+      false: {
+        borderColor: 'RoyalBlue',
+      },
+    },
+  },
+
+  '@md': {
+    display: 'block',
+  },
+})
+
 export const Container = styled('nav', {
   position: 'fixed',
 
