@@ -25,7 +25,6 @@ export function Trending() {
 
   return (
     <Container className="trending_component">
-      <h1>TRENDING</h1>
       <div className="title">
         <p>Livros populares</p>
 

@@ -1,14 +1,16 @@
 import { styled } from '../../styles/stitches.config'
 
 export const Container = styled('aside', {
+  position: 'fixed',
+  top: '50%',
+  right: 0,
+
   display: 'flex',
   flexDirection: 'column',
   gap: '$12',
   alignItems: 'center',
-
-  position: 'fixed',
-  bottom: 0,
-  right: 0,
+  transform: 'translateY(-50%)',
+  padding: '$20',
 
   '.title': {
     width: '100%',
@@ -42,5 +44,9 @@ export const Container = styled('aside', {
         height: '$16',
       },
     },
+  },
+
+  '@lg': {
+    display: 'none',
   },
 })
