@@ -1,6 +1,12 @@
 import { styled } from '../../styles/stitches.config'
 
 export const Container = styled('div', {
+  maxHeight: '100%',
+  minHeight: '100vh',
+
+  maxWidth: '100%',
+  minWidth: '100vw',
+
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',

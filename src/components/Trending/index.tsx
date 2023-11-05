@@ -9,7 +9,7 @@ import {
 import { SkeletonLoading } from '../SkeletonLoading'
 import { BookCard } from '../BookCard'
 
-import { Container } from './styles'
+import { Container, Title } from './styles'
 
 export function Trending() {
   const [trendingBooks, setTrendingBooks] = useState<TrendingBooksProps[]>([])
@@ -25,14 +25,14 @@ export function Trending() {
 
   return (
     <Container className="trending_component">
-      <div className="title">
+      <Title>
         <p>Livros populares</p>
 
         <span>
           Ver todos
           <CaretRight weight="bold" />
         </span>
-      </div>
+      </Title>
 
       {trendingBooks.length === 0 ? (
         <>
