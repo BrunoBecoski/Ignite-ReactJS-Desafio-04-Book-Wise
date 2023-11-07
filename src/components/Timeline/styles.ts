@@ -5,14 +5,14 @@ export const Container = styled('main', {
   display: 'flex',
   flexDirection: 'column',
   gap: '$12',
+})
 
-  '.title': {
-    marginBottom: '$4',
-    textAlign: 'left',
+export const Title = styled('p', {
+  marginBottom: '$4',
+  textAlign: 'left',
 
-    fontFamily: '$default',
-    color: '$gray-100',
-    fontSize: '$14',
-    lineHeight: '$160',
-  },
+  fontFamily: '$default',
+  color: '$gray-100',
+  fontSize: '$14',
+  lineHeight: '$160',
 })

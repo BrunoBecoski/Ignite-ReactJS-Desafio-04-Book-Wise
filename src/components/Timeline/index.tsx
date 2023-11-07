@@ -6,7 +6,7 @@ import { SkeletonLoading } from '../SkeletonLoading'
 import { BookReview } from '../BookReview'
 import { Button } from '../Button'
 
-import { Container } from './styles'
+import { Container, Title } from './styles'
 
 export function Timeline() {
   const [ratings, setRatings] = useState<RatingsProps[]>([])
@@ -30,7 +30,7 @@ export function Timeline() {
 
   return (
     <Container className="timeline_component">
-      <p className="title">Avaliações mais recentes</p>
+      <Title>Avaliações mais recentes</Title>
 
       {ratings.length === 0 ? (
         <>
