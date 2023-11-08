@@ -1,10 +1,11 @@
 import Head from 'next/head'
+import { ChartLineUp } from '@phosphor-icons/react'
 
 import { Timeline } from '../../components/Timeline'
 import { Trending } from '../../components/Trending'
 import { Navigate } from '../../components/Navigate'
 
-import { Container, Content } from './styles'
+import { Container, Content, PageTitle, Scrolls } from './styles'
 
 export default function Start() {
   return (
@@ -16,7 +17,14 @@ export default function Start() {
       <Content>
         <Navigate page="start" />
 
-        <Timeline />
+        <Scrolls>
+          <PageTitle>
+            <ChartLineUp />
+            Início
+          </PageTitle>
+
+          <Timeline />
+        </Scrolls>
 
         <Trending />
       </Content>

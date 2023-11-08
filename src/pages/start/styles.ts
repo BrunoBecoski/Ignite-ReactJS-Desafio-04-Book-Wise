@@ -22,8 +22,33 @@ export const Content = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+})
 
-  '.timeline_component': {
-    maxWidth: '50%',
+export const Scrolls = styled('div', {
+  display: 'flex',
+  alignItems: 'start',
+  flexDirection: 'column',
+
+  maxWidth: '50%',
+})
+
+export const PageTitle = styled('h2', {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: '$12',
+
+  marginBlock: '$52 $40',
+
+  fontWeight: '$bold',
+  fontFamily: '$default',
+  color: '$gray-100',
+  fontSize: '$24',
+
+  svg: {
+    width: '$32',
+    height: '$32',
+
+    fill: '$green-100',
   },
 })
