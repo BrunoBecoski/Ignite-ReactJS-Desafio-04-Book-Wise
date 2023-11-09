@@ -19,17 +19,20 @@ export const Content = styled('div', {
   maxWidth: '1440px',
   marginInline: 'auto',
 
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+  display: 'grid',
+  gridTemplateColumns: '348px auto 420px',
+  gridTemplateAreas: `
+    '. scrolls .'
+  `,
 })
 
 export const Scrolls = styled('div', {
+  gridArea: 'scrolls',
+
   display: 'flex',
   alignItems: 'start',
   flexDirection: 'column',
-
-  maxWidth: '50%',
+  paddingInline: '$64 $96',
 })
 
 export const PageTitle = styled('h2', {

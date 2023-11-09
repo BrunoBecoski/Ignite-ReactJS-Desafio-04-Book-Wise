@@ -31,7 +31,7 @@ export const Header = styled('header', {
 export const Container = styled('nav', {
   position: 'fixed',
 
-  left: 'calc(50vw - 700px)',
+  left: 'calc(50vw - 740px)',
   top: '$0',
   bottom: '$0',
 
@@ -45,9 +45,6 @@ export const Container = styled('nav', {
   backgroundSize: 'cover',
 
   borderRadius: '$12',
-
-  maxWidth: '$232',
-  height: 'calc(100vh - $40)',
 
   display: 'flex',
   flexDirection: 'column',

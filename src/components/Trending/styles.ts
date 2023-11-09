@@ -2,7 +2,7 @@ import { styled } from '../../styles/stitches.config'
 
 export const Container = styled('aside', {
   position: 'fixed',
-  right: 'calc(50vw - 700px)',
+  right: 'calc(50vw - 644px)',
   top: '50%',
   transform: 'translateY(-50%)',
 
