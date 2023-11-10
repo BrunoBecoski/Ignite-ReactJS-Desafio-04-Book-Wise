@@ -18,21 +18,26 @@ export const Content = styled('div', {
   width: '100%',
   maxWidth: '1440px',
   marginInline: 'auto',
-
-  display: 'grid',
-  gridTemplateColumns: '348px auto 420px',
-  gridTemplateAreas: `
-    '. scrolls .'
-  `,
 })
 
 export const Scrolls = styled('div', {
-  gridArea: 'scrolls',
-
   display: 'flex',
   alignItems: 'start',
   flexDirection: 'column',
-  paddingInline: '$64 $96',
+
+  marginInline: '$348 $484',
+
+  '@xxl': {
+    marginInline: '25vw 30vw',
+  },
+
+  '@lg': {
+    marginInline: '300px $20',
+  },
+
+  '@md': {
+    marginInline: '$20',
+  },
 })
 
 export const PageTitle = styled('h2', {
