@@ -1,19 +1,17 @@
 import { styled } from '../../styles/stitches.config'
 
 export const Container = styled('aside', {
-  position: 'fixed',
-  right: 'calc(50vw - 644px)',
-  top: '50%',
-  transform: 'translateY(-50%)',
-
   display: 'flex',
+  alignItems: 'center',
   flexDirection: 'column',
   gap: '$12',
-  alignItems: 'center',
 
-  '@lg': {
-    display: 'none',
-  },
+  position: 'sticky',
+  margin: '$20',
+  height: '100%',
+
+  marginTop: '$124',
+  top: '$20',
 })
 
 export const Title = styled('div', {

@@ -107,6 +107,7 @@ export const { styled, getCssText, keyframes } = createStitches({
       80: '5rem', //       80px
       96: '6rem', //       96px
       112: '7rem', //     112px
+      124: '7.75rem', //  124px
       128: '8rem', //     128px
       144: '9rem', //     144px
       160: '10rem', //    160px

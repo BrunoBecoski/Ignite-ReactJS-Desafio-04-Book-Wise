@@ -29,15 +29,9 @@ export const Header = styled('header', {
 })
 
 export const Container = styled('nav', {
-  position: 'fixed',
-
-  left: 'calc(50vw - 740px)',
-  top: '$0',
-  bottom: '$0',
-
-  '@xxl': {
-    left: '0',
-  },
+  position: 'sticky',
+  height: 'calc(100vh - $40)',
+  top: '$20',
 
   backgroundImage: `url(${sidebarBackground.src})`,
   backgroundRepeat: 'no-repeat',

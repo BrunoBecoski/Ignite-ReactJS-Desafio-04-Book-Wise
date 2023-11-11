@@ -12,12 +12,16 @@ export const Container = styled('div', {
   background: '$gray-700',
   borderRadius: '$8',
 
-  '@xxl': {
-    width: '100%',
-  },
+  // '@xxl': {
+  //   width: '100%',
+  // },
 
-  '@lg': {
-    width: '$324',
+  // '@lg': {
+  //   width: '$324',
+  // },
+
+  '@sm': {
+    width: '100%',
   },
 })
 
@@ -31,6 +35,10 @@ export const BookDetails = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
+
+  '@sm': {
+    display: 'none',
+  },
 })
 
 export const Title = styled('div', {

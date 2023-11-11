@@ -24,7 +24,7 @@ export function Navigate({ page }: NavigateProps) {
 
   return (
     <>
-      <Header isOpen={isOpen}>
+      {/* <Header isOpen={isOpen}>
         <Button
           variant="icon"
           onClick={handleChangeIsOpen}
@@ -35,38 +35,38 @@ export function Navigate({ page }: NavigateProps) {
         >
           {isOpen ? <X /> : <List />}
         </Button>
-      </Header>
-      <Overlay
+      </Header> */}
+      {/* <Overlay
         isOpen={isOpen}
         setIsOpen={handleChangeIsOpen}
         background={isOpen}
+      > */}
+      <Container
+        className="sidebar_component"
+        isOpen={{ '@lg': 'true', '@md': isOpen }}
       >
-        <Container
-          className="sidebar_component"
-          isOpen={{ '@lg': 'true', '@md': isOpen }}
-        >
-          <div>
-            <Image alt="Logo BookWise" src={logoImg} />
+        <div>
+          <Image alt="Logo BookWise" src={logoImg} />
 
-            <Menu>
-              <Navigation href="/start" selected={page === 'start'}>
-                <ChartLineUp weight={page === 'start' ? 'bold' : 'regular'} />
-                Início
-              </Navigation>
+          <Menu>
+            <Navigation href="/start" selected={page === 'start'}>
+              <ChartLineUp weight={page === 'start' ? 'bold' : 'regular'} />
+              Início
+            </Navigation>
 
-              <Navigation href="/explore" selected={page === 'explore'}>
-                <Binoculars weight={page === 'explore' ? 'bold' : 'regular'} />
-                Explorar
-              </Navigation>
-            </Menu>
-          </div>
+            <Navigation href="/explore" selected={page === 'explore'}>
+              <Binoculars weight={page === 'explore' ? 'bold' : 'regular'} />
+              Explorar
+            </Navigation>
+          </Menu>
+        </div>
 
-          <Login href="/">
-            Fazer login
-            <SignIn />
-          </Login>
-        </Container>
-      </Overlay>
+        <Login href="/">
+          Fazer login
+          <SignIn />
+        </Login>
+      </Container>
+      {/* </Overlay> */}
     </>
   )
 }

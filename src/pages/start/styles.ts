@@ -1,12 +1,6 @@
 import { styled } from '../../styles/stitches.config'
 
 export const Container = styled('div', {
-  maxHeight: '100%',
-  minHeight: '100vh',
-
-  maxWidth: '100%',
-  minWidth: '100vw',
-
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -15,29 +9,15 @@ export const Container = styled('div', {
 })
 
 export const Content = styled('div', {
-  width: '100%',
   maxWidth: '1440px',
-  marginInline: 'auto',
+  display: 'flex',
+  gap: '$20',
 })
 
 export const Scrolls = styled('div', {
   display: 'flex',
   alignItems: 'start',
   flexDirection: 'column',
-
-  marginInline: '$348 $484',
-
-  '@xxl': {
-    marginInline: '25vw 30vw',
-  },
-
-  '@lg': {
-    marginInline: '300px $20',
-  },
-
-  '@md': {
-    marginInline: '$20',
-  },
 })
 
 export const PageTitle = styled('h2', {
