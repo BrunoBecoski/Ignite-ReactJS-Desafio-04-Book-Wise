@@ -5,6 +5,11 @@ export const Container = styled('div', {
   alignItems: 'center',
   justifyContent: 'center',
 
+  minWidth: 'fit-content',
+  maxWidth: '100%',
+  minHeight: 'fit-content',
+  maxHeight: '100%',
+
   background: '$gray-800',
 })
 
