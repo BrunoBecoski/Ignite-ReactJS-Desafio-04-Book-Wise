@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { ChartLineUp } from '@phosphor-icons/react'
 
+import { Background } from '../../components/Background'
 import { Timeline } from '../../components/Timeline'
 import { Trending } from '../../components/Trending'
 import { Navigate } from '../../components/Navigate'
@@ -13,6 +14,8 @@ export default function Start() {
       <Head>
         <title>Início | BookWise</title>
       </Head>
+
+      <Background />
 
       <Content>
         <Navigate page="start" />

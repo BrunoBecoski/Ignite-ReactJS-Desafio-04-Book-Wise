@@ -4,13 +4,6 @@ export const Container = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-
-  minWidth: 'fit-content',
-  maxWidth: '100%',
-  minHeight: 'fit-content',
-  maxHeight: '100%',
-
-  background: '$gray-800',
 })
 
 export const Content = styled('div', {
